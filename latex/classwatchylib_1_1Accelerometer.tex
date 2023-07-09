@@ -1,0 +1,182 @@
+\hypertarget{classwatchylib_1_1Accelerometer}{}\doxysection{watchylib.\+Accelerometer Class Reference}
+\label{classwatchylib_1_1Accelerometer}\index{watchylib.Accelerometer@{watchylib.Accelerometer}}
+
+
+A class for the BMA423 accelerometer.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classwatchylib_1_1Accelerometer_1_1InterruptMask}{Interrupt\+Mask}}
+\begin{DoxyCompactList}\small\item\em A subclass for managing interrupt registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Accelerometer_a5fd5645c932acb2233296d327373b34f}\label{classwatchylib_1_1Accelerometer_a5fd5645c932acb2233296d327373b34f}} 
+None {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, i2c, address)
+\item 
+def \mbox{\hyperlink{classwatchylib_1_1Accelerometer_ae8af32f0022964c3d73ec6e5cb5e6d32}{reset}} (self)
+\begin{DoxyCompactList}\small\item\em Resets the device to the default configuration. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classwatchylib_1_1Accelerometer_a1d5c96e9cd0fa9cb03f6f540d21378f7}{low\+Power\+Mode}} (self)
+\begin{DoxyCompactList}\small\item\em Turns the low power mode on or off. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1Accelerometer_a37320d963198abf7b783316deecf8bc4}\label{classwatchylib_1_1Accelerometer_a37320d963198abf7b783316deecf8bc4}} 
+def {\bfseries low\+Power\+Mode} (self, value)
+\item 
+def \mbox{\hyperlink{classwatchylib_1_1Accelerometer_a17227abb8b38f4591007896e5cc6aa48}{data\+Rate}} (self)
+\begin{DoxyCompactList}\small\item\em Sets the output data rate of the device. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1Accelerometer_a2a32562a3146afc49325755d4ef695bc}\label{classwatchylib_1_1Accelerometer_a2a32562a3146afc49325755d4ef695bc}} 
+def {\bfseries data\+Rate} (self, value)
+\item 
+def \mbox{\hyperlink{classwatchylib_1_1Accelerometer_a2fdba63eb3ee672fedcc358441bf2151}{bandwidth\+Parameter}} (self)
+\begin{DoxyCompactList}\small\item\em Sets the bandwidth parameter of the device. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1Accelerometer_a905c27ac4574a44cf11a9be48d8ebf3d}\label{classwatchylib_1_1Accelerometer_a905c27ac4574a44cf11a9be48d8ebf3d}} 
+def {\bfseries bandwidth\+Parameter} (self, value)
+\item 
+def \mbox{\hyperlink{classwatchylib_1_1Accelerometer_ac47863c2ac25d65dfc495636d89041a0}{acceleration}} (self)
+\begin{DoxyCompactList}\small\item\em Returns the current acceleration in g\textquotesingle{}s. \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{classwatchylib_1_1Accelerometer_a07a33fafd363d6612e5dcbbc70a9ff6d}{error\+Message}} (self)
+\begin{DoxyCompactList}\small\item\em Returns an error message based on the device status registers. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classwatchylib_1_1Accelerometer_a9dd51caeaccd9cc163aa0c21702ac82d}{error}} (self)
+\begin{DoxyCompactList}\small\item\em Returns the error status of the device. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Accelerometer_af888dbae6c7e5bfbd7457c775d2e6bb6}\label{classwatchylib_1_1Accelerometer_af888dbae6c7e5bfbd7457c775d2e6bb6}} 
+{\bfseries i2c\+Bus}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Accelerometer_a83973ebea401a1c361d672806099044e}\label{classwatchylib_1_1Accelerometer_a83973ebea401a1c361d672806099044e}} 
+{\bfseries i2c\+\_\+device}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Accelerometer_a3ea8ab8d8935cefe8154b7a8e4f797ac}\label{classwatchylib_1_1Accelerometer_a3ea8ab8d8935cefe8154b7a8e4f797ac}} 
+{\bfseries low\+Power\+Mode}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Accelerometer_af7cf70672157641d9c1298d6330d467d}\label{classwatchylib_1_1Accelerometer_af7cf70672157641d9c1298d6330d467d}} 
+{\bfseries data\+Rate}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Accelerometer_a30cd003aa9e183e03f0371e5e2e03137}\label{classwatchylib_1_1Accelerometer_a30cd003aa9e183e03f0371e5e2e03137}} 
+{\bfseries bandwidth\+Parameter}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+dictionary {\bfseries DATA\+\_\+\+RATE}
+\item 
+dictionary {\bfseries BANDWIDTH}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for the BMA423 accelerometer. 
+
+The \mbox{\hyperlink{classwatchylib_1_1Watchy}{Watchy}} uses a BMA423 accelerometer, which is a 3-\/axis accelerometer with a built in step counter, activity recognition, and tilt detection interrupts. This class provides a simple interface to the accelerometer. It\textquotesingle{}s a pretty complicated device and I couldn\textquotesingle{}t find a library for it, so I\textquotesingle{}ve written my own. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classwatchylib_1_1Accelerometer_ac47863c2ac25d65dfc495636d89041a0}\label{classwatchylib_1_1Accelerometer_ac47863c2ac25d65dfc495636d89041a0}} 
+\index{watchylib.Accelerometer@{watchylib.Accelerometer}!acceleration@{acceleration}}
+\index{acceleration@{acceleration}!watchylib.Accelerometer@{watchylib.Accelerometer}}
+\doxysubsubsection{\texorpdfstring{acceleration()}{acceleration()}}
+{\footnotesize\ttfamily def watchylib.\+Accelerometer.\+acceleration (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Returns the current acceleration in g\textquotesingle{}s. 
+
+This property returns a tuple with the current acceleration in g\textquotesingle{}s scaled to the current sensor settings. The tuple is in an (x, y, z) format. This property is read only. \mbox{\Hypertarget{classwatchylib_1_1Accelerometer_a2fdba63eb3ee672fedcc358441bf2151}\label{classwatchylib_1_1Accelerometer_a2fdba63eb3ee672fedcc358441bf2151}} 
+\index{watchylib.Accelerometer@{watchylib.Accelerometer}!bandwidthParameter@{bandwidthParameter}}
+\index{bandwidthParameter@{bandwidthParameter}!watchylib.Accelerometer@{watchylib.Accelerometer}}
+\doxysubsubsection{\texorpdfstring{bandwidthParameter()}{bandwidthParameter()}}
+{\footnotesize\ttfamily def watchylib.\+Accelerometer.\+bandwidth\+Parameter (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Sets the bandwidth parameter of the device. 
+
+This property provides sets the bandwidth parameter and provides a check to make sure that the bandwidth parameter is valid. A Value\+Error will be thrown if an invalid bandwidth parameter is given. Must be a value from the BANDWIDTH dictionary. \mbox{\Hypertarget{classwatchylib_1_1Accelerometer_a17227abb8b38f4591007896e5cc6aa48}\label{classwatchylib_1_1Accelerometer_a17227abb8b38f4591007896e5cc6aa48}} 
+\index{watchylib.Accelerometer@{watchylib.Accelerometer}!dataRate@{dataRate}}
+\index{dataRate@{dataRate}!watchylib.Accelerometer@{watchylib.Accelerometer}}
+\doxysubsubsection{\texorpdfstring{dataRate()}{dataRate()}}
+{\footnotesize\ttfamily def watchylib.\+Accelerometer.\+data\+Rate (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Sets the output data rate of the device. 
+
+This property provides sets the data rate and provides a check to make sure that the data rate is valid. A Value\+Error will be thrown if an invalid data rate is given. Must be a value from the DATA\+\_\+\+RATE dictionary. Note that many of the data rates are not supported in low power mode. Also, some features have a minimum data rate requirement in low power mode. Many require a data rate of at least 50 Hz. The tap detection requires a data rate of at least 200 Hz. \mbox{\Hypertarget{classwatchylib_1_1Accelerometer_a9dd51caeaccd9cc163aa0c21702ac82d}\label{classwatchylib_1_1Accelerometer_a9dd51caeaccd9cc163aa0c21702ac82d}} 
+\index{watchylib.Accelerometer@{watchylib.Accelerometer}!error@{error}}
+\index{error@{error}!watchylib.Accelerometer@{watchylib.Accelerometer}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily  bool watchylib.\+Accelerometer.\+error (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Returns the error status of the device. 
+
+This property returns a boolean value that indicates if there is an error with the device. It returns True if {\itshape any} status register indicates an error, and False if all status registers indicate no error. This property is read only. \mbox{\Hypertarget{classwatchylib_1_1Accelerometer_a07a33fafd363d6612e5dcbbc70a9ff6d}\label{classwatchylib_1_1Accelerometer_a07a33fafd363d6612e5dcbbc70a9ff6d}} 
+\index{watchylib.Accelerometer@{watchylib.Accelerometer}!errorMessage@{errorMessage}}
+\index{errorMessage@{errorMessage}!watchylib.Accelerometer@{watchylib.Accelerometer}}
+\doxysubsubsection{\texorpdfstring{errorMessage()}{errorMessage()}}
+{\footnotesize\ttfamily  str watchylib.\+Accelerometer.\+error\+Message (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Returns an error message based on the device status registers. 
+
+The error message will be a string that describes the error, based on the flags in the status registers. If there is no error, the string will be \textquotesingle{}No error.\textquotesingle{}. If there are multiple error flags set, the string will describe all of the errors in the order that they are checked. If the error cannot be determined, the string will be \textquotesingle{}Unknown error.\textquotesingle{}. This property is read only. \mbox{\Hypertarget{classwatchylib_1_1Accelerometer_a1d5c96e9cd0fa9cb03f6f540d21378f7}\label{classwatchylib_1_1Accelerometer_a1d5c96e9cd0fa9cb03f6f540d21378f7}} 
+\index{watchylib.Accelerometer@{watchylib.Accelerometer}!lowPowerMode@{lowPowerMode}}
+\index{lowPowerMode@{lowPowerMode}!watchylib.Accelerometer@{watchylib.Accelerometer}}
+\doxysubsubsection{\texorpdfstring{lowPowerMode()}{lowPowerMode()}}
+{\footnotesize\ttfamily def watchylib.\+Accelerometer.\+low\+Power\+Mode (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Turns the low power mode on or off. 
+
+\mbox{\hyperlink{classwatchylib_1_1Power}{Power}} saving mode reduces the power consumption of the device by reducing the data rate and bandwidth parameter. The device will draw 150uA in normal mode, and 14uA in low power mode. It makes register writes very slow (1000us vs 2us), but after the configuration is set there\textquotesingle{}s not much need to change them again. \mbox{\Hypertarget{classwatchylib_1_1Accelerometer_ae8af32f0022964c3d73ec6e5cb5e6d32}\label{classwatchylib_1_1Accelerometer_ae8af32f0022964c3d73ec6e5cb5e6d32}} 
+\index{watchylib.Accelerometer@{watchylib.Accelerometer}!reset@{reset}}
+\index{reset@{reset}!watchylib.Accelerometer@{watchylib.Accelerometer}}
+\doxysubsubsection{\texorpdfstring{reset()}{reset()}}
+{\footnotesize\ttfamily def watchylib.\+Accelerometer.\+reset (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Resets the device to the default configuration. 
+
+Resets all settings to their default values, and clears the FIFO. This is called automatically at startup or when the configuration is modified. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classwatchylib_1_1Accelerometer_a39ef00cb014ccbf3d7e67729f10f143f}\label{classwatchylib_1_1Accelerometer_a39ef00cb014ccbf3d7e67729f10f143f}} 
+\index{watchylib.Accelerometer@{watchylib.Accelerometer}!BANDWIDTH@{BANDWIDTH}}
+\index{BANDWIDTH@{BANDWIDTH}!watchylib.Accelerometer@{watchylib.Accelerometer}}
+\doxysubsubsection{\texorpdfstring{BANDWIDTH}{BANDWIDTH}}
+{\footnotesize\ttfamily dictionary watchylib.\+Accelerometer.\+BANDWIDTH\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  \{}
+\DoxyCodeLine{        \textcolor{stringliteral}{'osr4\_avg1'} : 0x00, \textcolor{stringliteral}{'osr2\_avg2'} : 0x01, \textcolor{stringliteral}{'norm\_avg4'} : 0x02,}
+\DoxyCodeLine{        \textcolor{stringliteral}{'cic\_avg8 '} : 0x03, \textcolor{stringliteral}{'res\_avg16'} : 0x04, \textcolor{stringliteral}{'res\_avg32'} : 0x05,}
+\DoxyCodeLine{        \textcolor{stringliteral}{'res\_avg64'} : 0x06, \textcolor{stringliteral}{'res\_avg128'}: 0x07,}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classwatchylib_1_1Accelerometer_af127ab6c891855aa540c5ff4b95023ee}\label{classwatchylib_1_1Accelerometer_af127ab6c891855aa540c5ff4b95023ee}} 
+\index{watchylib.Accelerometer@{watchylib.Accelerometer}!DATA\_RATE@{DATA\_RATE}}
+\index{DATA\_RATE@{DATA\_RATE}!watchylib.Accelerometer@{watchylib.Accelerometer}}
+\doxysubsubsection{\texorpdfstring{DATA\_RATE}{DATA\_RATE}}
+{\footnotesize\ttfamily dictionary watchylib.\+Accelerometer.\+DATA\+\_\+\+RATE\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  \{}
+\DoxyCodeLine{        \textcolor{stringliteral}{'odr\_0p78'}: 0x01, \textcolor{stringliteral}{'odr\_1p5'}:  0x02, \textcolor{stringliteral}{'odr\_3p1'}:  0x03, \textcolor{stringliteral}{'odr\_6p25'}: 0x04,}
+\DoxyCodeLine{        \textcolor{stringliteral}{'odr\_12p5'}: 0x05, \textcolor{stringliteral}{'odr\_25'}:   0x06, \textcolor{stringliteral}{'odr\_50'}:   0x07, \textcolor{stringliteral}{'odr\_100'}:  0x08,}
+\DoxyCodeLine{        \textcolor{stringliteral}{'odr\_200'}:  0x09, \textcolor{stringliteral}{'odr\_400'}:  0x0a, \textcolor{stringliteral}{'odr\_800'}:  0x0b, \textcolor{stringliteral}{'odr\_1k6'}:  0x0c,}
+\DoxyCodeLine{    \}}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+watchylib.\+py\end{DoxyCompactItemize}

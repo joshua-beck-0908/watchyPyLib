@@ -1,0 +1,70 @@
+\hypertarget{classwatchylib_1_1ButtonPad}{}\doxysection{watchylib.\+Button\+Pad Class Reference}
+\label{classwatchylib_1_1ButtonPad}\index{watchylib.ButtonPad@{watchylib.ButtonPad}}
+
+
+Defines the four buttons on the side of the watch.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1ButtonPad_af723a0a892e2f0e1a1f263fe58876ecb}\label{classwatchylib_1_1ButtonPad_af723a0a892e2f0e1a1f263fe58876ecb}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, pins)
+\item 
+def \mbox{\hyperlink{classwatchylib_1_1ButtonPad_a03f219a683090557982d929af0f522f3}{which}} (self)
+\begin{DoxyCompactList}\small\item\em Returns a list of all buttons that are currently pressed. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1ButtonPad_a1b98b7d541719b684fb866746e01afbb}\label{classwatchylib_1_1ButtonPad_a1b98b7d541719b684fb866746e01afbb}} 
+{\bfseries buttons}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1ButtonPad_ad0791452f50d83ddf303676f9e63aa00}\label{classwatchylib_1_1ButtonPad_ad0791452f50d83ddf303676f9e63aa00}} 
+{\bfseries up}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1ButtonPad_ae3b47d6f4906726c402406a701bb4cfb}\label{classwatchylib_1_1ButtonPad_ae3b47d6f4906726c402406a701bb4cfb}} 
+{\bfseries down}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1ButtonPad_a09ef2790e5315ae46b0657c77da34b0e}\label{classwatchylib_1_1ButtonPad_a09ef2790e5315ae46b0657c77da34b0e}} 
+{\bfseries cancel}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1ButtonPad_a514cc421de3e42046d6c0473e8da9552}\label{classwatchylib_1_1ButtonPad_a514cc421de3e42046d6c0473e8da9552}} 
+{\bfseries confirm}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1ButtonPad_a4896d6800378779aa9a4b1d64207f90b}\label{classwatchylib_1_1ButtonPad_a4896d6800378779aa9a4b1d64207f90b}} 
+{\bfseries menu}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1ButtonPad_a23e887a5ef9773469f8b249fc64714ee}\label{classwatchylib_1_1ButtonPad_a23e887a5ef9773469f8b249fc64714ee}} 
+{\bfseries back}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1ButtonPad_a223cc6dde6d3cdd17989e06226b475dc}\label{classwatchylib_1_1ButtonPad_a223cc6dde6d3cdd17989e06226b475dc}} 
+{\bfseries any}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Defines the four buttons on the side of the watch. 
+
+Provides convenience functions for accessing the buttons. See the \mbox{\hyperlink{classwatchylib_1_1Button}{Button}} class for more information.
+
+Available buttons are\+: up, down, cancel, confirm, menu, back, any You can access them like this\+: watchy.\+button.\+up.\+pressed watchy.\+button.\+down.\+wait() any is a meta button that can be used to wait for any button to be pressed. i.\+e. watchy.\+button.\+any.\+wait() 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classwatchylib_1_1ButtonPad_a03f219a683090557982d929af0f522f3}\label{classwatchylib_1_1ButtonPad_a03f219a683090557982d929af0f522f3}} 
+\index{watchylib.ButtonPad@{watchylib.ButtonPad}!which@{which}}
+\index{which@{which}!watchylib.ButtonPad@{watchylib.ButtonPad}}
+\doxysubsubsection{\texorpdfstring{which()}{which()}}
+{\footnotesize\ttfamily def watchylib.\+Button\+Pad.\+which (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Returns a list of all buttons that are currently pressed. 
+
+\begin{DoxyReturn}{Returns}
+A list of all buttons that are currently pressed. Empty if none. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+watchylib.\+py\end{DoxyCompactItemize}

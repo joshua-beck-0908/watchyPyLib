@@ -1,0 +1,174 @@
+\hypertarget{classwatchylib_1_1RTC}{}\doxysection{watchylib.\+RTC Class Reference}
+\label{classwatchylib_1_1RTC}\index{watchylib.RTC@{watchylib.RTC}}
+
+
+Interface to the real time clock IC.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classwatchylib_1_1RTC_a3ac7639a3efc15e625ecae5c521f65f5}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, i2c)
+\begin{DoxyCompactList}\small\item\em Creates a new \mbox{\hyperlink{classwatchylib_1_1RTC}{RTC}} object on the given I2C bus. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1RTC_ad5ac4c0641b025da36ceda010f6aa924}\label{classwatchylib_1_1RTC_ad5ac4c0641b025da36ceda010f6aa924}} 
+int \mbox{\hyperlink{classwatchylib_1_1RTC_ad5ac4c0641b025da36ceda010f6aa924}{hour}} (self)
+\begin{DoxyCompactList}\small\item\em Returns the current hour between zero and 23. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1RTC_ac061093a5e5b6b765028e32380fed90b}\label{classwatchylib_1_1RTC_ac061093a5e5b6b765028e32380fed90b}} 
+int \mbox{\hyperlink{classwatchylib_1_1RTC_ac061093a5e5b6b765028e32380fed90b}{minute}} (self)
+\begin{DoxyCompactList}\small\item\em Returns the current minute between zero and 59. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1RTC_a256a1c0c058777ac59e257b522b962b4}\label{classwatchylib_1_1RTC_a256a1c0c058777ac59e257b522b962b4}} 
+int \mbox{\hyperlink{classwatchylib_1_1RTC_a256a1c0c058777ac59e257b522b962b4}{second}} (self)
+\begin{DoxyCompactList}\small\item\em Returns the current second between zero and 59. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1RTC_aa124db44f57fbcba4658aaa6c78f3353}\label{classwatchylib_1_1RTC_aa124db44f57fbcba4658aaa6c78f3353}} 
+int \mbox{\hyperlink{classwatchylib_1_1RTC_aa124db44f57fbcba4658aaa6c78f3353}{day}} (self)
+\begin{DoxyCompactList}\small\item\em Returns the current day of the month between one and 31. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1RTC_a64a585fee726bf574510be76ea2905c7}\label{classwatchylib_1_1RTC_a64a585fee726bf574510be76ea2905c7}} 
+str \mbox{\hyperlink{classwatchylib_1_1RTC_a64a585fee726bf574510be76ea2905c7}{full\+Weekday}} (self)
+\begin{DoxyCompactList}\small\item\em Returns the full name of the current weekday. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1RTC_a9735070564d83e32506c0e8c4f3ba3d9}\label{classwatchylib_1_1RTC_a9735070564d83e32506c0e8c4f3ba3d9}} 
+str \mbox{\hyperlink{classwatchylib_1_1RTC_a9735070564d83e32506c0e8c4f3ba3d9}{weekday}} (self)
+\begin{DoxyCompactList}\small\item\em Returns the abbreviated name of the current weekday. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1RTC_a1e94493a434c15b10a7533486e09faf5}\label{classwatchylib_1_1RTC_a1e94493a434c15b10a7533486e09faf5}} 
+int \mbox{\hyperlink{classwatchylib_1_1RTC_a1e94493a434c15b10a7533486e09faf5}{weekday\+Number}} (self)
+\begin{DoxyCompactList}\small\item\em Returns the number of the current weekday between one and seven. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1RTC_a98c2993f1fc355ce2ef4ceb8c0c3d64f}\label{classwatchylib_1_1RTC_a98c2993f1fc355ce2ef4ceb8c0c3d64f}} 
+int \mbox{\hyperlink{classwatchylib_1_1RTC_a98c2993f1fc355ce2ef4ceb8c0c3d64f}{month\+Number}} (self)
+\begin{DoxyCompactList}\small\item\em Returns the number of the current month between one and 12. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1RTC_a799b60550147aa6dc3bc080f6c73b4ce}\label{classwatchylib_1_1RTC_a799b60550147aa6dc3bc080f6c73b4ce}} 
+str \mbox{\hyperlink{classwatchylib_1_1RTC_a799b60550147aa6dc3bc080f6c73b4ce}{month}} (self)
+\begin{DoxyCompactList}\small\item\em Returns the abbreviated name of the current month. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1RTC_abc835e567251540d900202763758c240}\label{classwatchylib_1_1RTC_abc835e567251540d900202763758c240}} 
+str \mbox{\hyperlink{classwatchylib_1_1RTC_abc835e567251540d900202763758c240}{full\+Month}} (self)
+\begin{DoxyCompactList}\small\item\em Returns the full name of the current month. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1RTC_adbc0cdc3ba787508c872c09106032a0f}\label{classwatchylib_1_1RTC_adbc0cdc3ba787508c872c09106032a0f}} 
+int \mbox{\hyperlink{classwatchylib_1_1RTC_adbc0cdc3ba787508c872c09106032a0f}{year}} (self)
+\begin{DoxyCompactList}\small\item\em Return the current year are a two digit number. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1RTC_a35499cef002a92b315dbe166b13f23a7}\label{classwatchylib_1_1RTC_a35499cef002a92b315dbe166b13f23a7}} 
+int \mbox{\hyperlink{classwatchylib_1_1RTC_a35499cef002a92b315dbe166b13f23a7}{full\+Year}} (self)
+\begin{DoxyCompactList}\small\item\em Returns the current year as a four digit number. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1RTC_a86c553fb6a381bfc9303406c8a75f4fe}\label{classwatchylib_1_1RTC_a86c553fb6a381bfc9303406c8a75f4fe}} 
+int \mbox{\hyperlink{classwatchylib_1_1RTC_a86c553fb6a381bfc9303406c8a75f4fe}{century}} (self)
+\begin{DoxyCompactList}\small\item\em Returns the current century number. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1RTC_a1e4d26c997c165d35e11d8a10916a8e5}\label{classwatchylib_1_1RTC_a1e4d26c997c165d35e11d8a10916a8e5}} 
+time.\+struct\+\_\+time \mbox{\hyperlink{classwatchylib_1_1RTC_a1e4d26c997c165d35e11d8a10916a8e5}{time}} (self)
+\begin{DoxyCompactList}\small\item\em Returns the current date and time as a time struct. \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{classwatchylib_1_1RTC_a14ab4107d2e2728de4e31854e5eadf1e}{clock\+Time}} (self)
+\begin{DoxyCompactList}\small\item\em Returns the current minute and hours as a string in HH\+:MM format. \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{classwatchylib_1_1RTC_ae9c82d1b5a50b021afa6cf3ead34d770}{clock\+Time12h}} (self)
+\begin{DoxyCompactList}\small\item\em Returns the current minute and hours as a string in HH\+:MM format. \end{DoxyCompactList}\item 
+str \mbox{\hyperlink{classwatchylib_1_1RTC_a9bc6fcbce58a8381947c1ec7242dfdf0}{date}} (self)
+\begin{DoxyCompactList}\small\item\em Returns the current date as a string. \end{DoxyCompactList}\item 
+None \mbox{\hyperlink{classwatchylib_1_1RTC_a81c547d14c1cb4b7d5354010c0d651ab}{time}} (self, time)
+\begin{DoxyCompactList}\small\item\em A setter for the time property. \end{DoxyCompactList}\item 
+time.\+struct\+\_\+time \mbox{\hyperlink{classwatchylib_1_1RTC_aefdca03e41250de64db3fbce82cc7b95}{time\+Next\+Minute}} (self)
+\begin{DoxyCompactList}\small\item\em Returns a time struct rounds up to the next minute. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1RTC_a29c06bd5105c4cd310a2956cedfb73b3}\label{classwatchylib_1_1RTC_a29c06bd5105c4cd310a2956cedfb73b3}} 
+{\bfseries dev}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1RTC_ad9b2a7d4a92bc0575a08b714da7d7466}\label{classwatchylib_1_1RTC_ad9b2a7d4a92bc0575a08b714da7d7466}} 
+{\bfseries date\+Format}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1RTC_af11c2e9ce93c6a7d6c065df447bf4114}\label{classwatchylib_1_1RTC_af11c2e9ce93c6a7d6c065df447bf4114}} 
+list {\bfseries WEEKDAYS} = \mbox{[}\textquotesingle{}Monday\textquotesingle{}, \textquotesingle{}Tuesday\textquotesingle{}, \textquotesingle{}Wednesday\textquotesingle{}, \textquotesingle{}Thursday\textquotesingle{}, \textquotesingle{}Friday\textquotesingle{}, \textquotesingle{}Saturday\textquotesingle{}, \textquotesingle{}Sunday\textquotesingle{}\mbox{]}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1RTC_a07282f2e1774a7fbcae59ae5688bfb75}\label{classwatchylib_1_1RTC_a07282f2e1774a7fbcae59ae5688bfb75}} 
+list {\bfseries WEEKDAYS\+\_\+\+SHORT} = \mbox{[}\textquotesingle{}Mon\textquotesingle{}, \textquotesingle{}Tue\textquotesingle{}, \textquotesingle{}Wed\textquotesingle{}, \textquotesingle{}Thu\textquotesingle{}, \textquotesingle{}Fri\textquotesingle{}, \textquotesingle{}Sat\textquotesingle{}, \textquotesingle{}Sun\textquotesingle{}\mbox{]}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1RTC_a1161b13aededf4e3ed8211b10c146466}\label{classwatchylib_1_1RTC_a1161b13aededf4e3ed8211b10c146466}} 
+list {\bfseries MONTHS} = \mbox{[}\textquotesingle{}January\textquotesingle{}, \textquotesingle{}February\textquotesingle{}, \textquotesingle{}March\textquotesingle{}, \textquotesingle{}April\textquotesingle{}, \textquotesingle{}May\textquotesingle{}, \textquotesingle{}June\textquotesingle{}, \textquotesingle{}July\textquotesingle{}, \textquotesingle{}August\textquotesingle{}, \textquotesingle{}September\textquotesingle{}, \textquotesingle{}October\textquotesingle{}, \textquotesingle{}November\textquotesingle{}, \textquotesingle{}December\textquotesingle{}\mbox{]}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1RTC_a03299d862904862b2982fbd3daecb659}\label{classwatchylib_1_1RTC_a03299d862904862b2982fbd3daecb659}} 
+list {\bfseries MONTHS\+\_\+\+SHORT} = \mbox{[}\textquotesingle{}Jan\textquotesingle{}, \textquotesingle{}Feb\textquotesingle{}, \textquotesingle{}Mar\textquotesingle{}, \textquotesingle{}Apr\textquotesingle{}, \textquotesingle{}May\textquotesingle{}, \textquotesingle{}Jun\textquotesingle{}, \textquotesingle{}Jul\textquotesingle{}, \textquotesingle{}Aug\textquotesingle{}, \textquotesingle{}Sep\textquotesingle{}, \textquotesingle{}Oct\textquotesingle{}, \textquotesingle{}Nov\textquotesingle{}, \textquotesingle{}Dec\textquotesingle{}\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface to the real time clock IC. 
+
+The \mbox{\hyperlink{classwatchylib_1_1RTC}{RTC}} is either a PCF8563 or DS3231 depending on device version. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classwatchylib_1_1RTC_a3ac7639a3efc15e625ecae5c521f65f5}\label{classwatchylib_1_1RTC_a3ac7639a3efc15e625ecae5c521f65f5}} 
+\index{watchylib.RTC@{watchylib.RTC}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!watchylib.RTC@{watchylib.RTC}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None watchylib.\+RTC.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{i2c }\end{DoxyParamCaption})}
+
+
+
+Creates a new \mbox{\hyperlink{classwatchylib_1_1RTC}{RTC}} object on the given I2C bus. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i2c} & The I2C bus to use. Can be initialised from board.\+I2\+C() \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classwatchylib_1_1RTC_a14ab4107d2e2728de4e31854e5eadf1e}\label{classwatchylib_1_1RTC_a14ab4107d2e2728de4e31854e5eadf1e}} 
+\index{watchylib.RTC@{watchylib.RTC}!clockTime@{clockTime}}
+\index{clockTime@{clockTime}!watchylib.RTC@{watchylib.RTC}}
+\doxysubsubsection{\texorpdfstring{clockTime()}{clockTime()}}
+{\footnotesize\ttfamily  str watchylib.\+RTC.\+clock\+Time (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Returns the current minute and hours as a string in HH\+:MM format. 
+
+A 24-\/hour clock is used. An hour or minute less than 10 is padded with a zero. \mbox{\Hypertarget{classwatchylib_1_1RTC_ae9c82d1b5a50b021afa6cf3ead34d770}\label{classwatchylib_1_1RTC_ae9c82d1b5a50b021afa6cf3ead34d770}} 
+\index{watchylib.RTC@{watchylib.RTC}!clockTime12h@{clockTime12h}}
+\index{clockTime12h@{clockTime12h}!watchylib.RTC@{watchylib.RTC}}
+\doxysubsubsection{\texorpdfstring{clockTime12h()}{clockTime12h()}}
+{\footnotesize\ttfamily  str watchylib.\+RTC.\+clock\+Time12h (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Returns the current minute and hours as a string in HH\+:MM format. 
+
+This is the same as clock\+Time but with a 12-\/hour clock. Either \textquotesingle{} AM\textquotesingle{} or \textquotesingle{} PM\textquotesingle{} is appended to the end. A minute letter than 10 is padded with a zero. An hour less than 10 is padded with a space. \mbox{\Hypertarget{classwatchylib_1_1RTC_a9bc6fcbce58a8381947c1ec7242dfdf0}\label{classwatchylib_1_1RTC_a9bc6fcbce58a8381947c1ec7242dfdf0}} 
+\index{watchylib.RTC@{watchylib.RTC}!date@{date}}
+\index{date@{date}!watchylib.RTC@{watchylib.RTC}}
+\doxysubsubsection{\texorpdfstring{date()}{date()}}
+{\footnotesize\ttfamily  str watchylib.\+RTC.\+date (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Returns the current date as a string. 
+
+The format is determined by the date\+Format property. Possible options are\+:
+\begin{DoxyItemize}
+\item Geo\+Location.\+YMD\+\_\+\+FORMAT (year-\/month-\/day)
+\item Geo\+Location.\+DMY\+\_\+\+FORMAT (day/month/year)
+\item Geo\+Location.\+MDY\+\_\+\+FORMAT (month/day/year) The default is year-\/month-\/day. The \mbox{\hyperlink{classwatchylib_1_1GeoLocation}{Geo\+Location}} class may change this later depending on the country. 
+\end{DoxyItemize}\mbox{\Hypertarget{classwatchylib_1_1RTC_a81c547d14c1cb4b7d5354010c0d651ab}\label{classwatchylib_1_1RTC_a81c547d14c1cb4b7d5354010c0d651ab}} 
+\index{watchylib.RTC@{watchylib.RTC}!time@{time}}
+\index{time@{time}!watchylib.RTC@{watchylib.RTC}}
+\doxysubsubsection{\texorpdfstring{time()}{time()}}
+{\footnotesize\ttfamily  None watchylib.\+RTC.\+time (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{time }\end{DoxyParamCaption})}
+
+
+
+A setter for the time property. 
+
+The time can be set with a time struct. This should be done automatically by the \mbox{\hyperlink{classwatchylib_1_1NTP}{NTP}} class if internet is available. \mbox{\Hypertarget{classwatchylib_1_1RTC_aefdca03e41250de64db3fbce82cc7b95}\label{classwatchylib_1_1RTC_aefdca03e41250de64db3fbce82cc7b95}} 
+\index{watchylib.RTC@{watchylib.RTC}!timeNextMinute@{timeNextMinute}}
+\index{timeNextMinute@{timeNextMinute}!watchylib.RTC@{watchylib.RTC}}
+\doxysubsubsection{\texorpdfstring{timeNextMinute()}{timeNextMinute()}}
+{\footnotesize\ttfamily  time.\+struct\+\_\+time watchylib.\+RTC.\+time\+Next\+Minute (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Returns a time struct rounds up to the next minute. 
+
+This is useful for display refresh. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+watchylib.\+py\end{DoxyCompactItemize}

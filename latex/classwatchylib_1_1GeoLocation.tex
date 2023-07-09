@@ -1,0 +1,125 @@
+\hypertarget{classwatchylib_1_1GeoLocation}{}\doxysection{watchylib.\+Geo\+Location Class Reference}
+\label{classwatchylib_1_1GeoLocation}\index{watchylib.GeoLocation@{watchylib.GeoLocation}}
+
+
+A class for getting the current location from an IP address.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1GeoLocation_ac5118289de62b2102e14f28e7672185f}\label{classwatchylib_1_1GeoLocation_ac5118289de62b2102e14f28e7672185f}} 
+None {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, pool)
+\item 
+def \mbox{\hyperlink{classwatchylib_1_1GeoLocation_a75801e04dd30ddbc97098e562150942e}{refresh}} (self)
+\begin{DoxyCompactList}\small\item\em Attempts to refresh the \mbox{\hyperlink{classwatchylib_1_1GeoLocation}{Geo\+Location}} data. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classwatchylib_1_1GeoLocation_a4d87a546a13728bb551d4483f2057126}{geolocate}} (self)
+\begin{DoxyCompactList}\small\item\em Loads the \mbox{\hyperlink{classwatchylib_1_1GeoLocation}{Geo\+Location}} data. \end{DoxyCompactList}\item 
+None \mbox{\hyperlink{classwatchylib_1_1GeoLocation_ad6b4be8182032ae72ee2d6acb0b013d1}{load\+Props}} (self)
+\begin{DoxyCompactList}\small\item\em Loads the \mbox{\hyperlink{classwatchylib_1_1GeoLocation}{Geo\+Location}} properties from the data. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1GeoLocation_ac3e553d052a92137522b107db5f9098d}\label{classwatchylib_1_1GeoLocation_ac3e553d052a92137522b107db5f9098d}} 
+def \mbox{\hyperlink{classwatchylib_1_1GeoLocation_ac3e553d052a92137522b107db5f9098d}{load\+Saved}} (self)
+\begin{DoxyCompactList}\small\item\em Loads the \mbox{\hyperlink{classwatchylib_1_1GeoLocation}{Geo\+Location}} data from a previously saved file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1GeoLocation_a30f590c33ca980b69118153ca98f373b}\label{classwatchylib_1_1GeoLocation_a30f590c33ca980b69118153ca98f373b}} 
+{\bfseries pool}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1GeoLocation_a5ebb883fa0a8ce5d3cb75bc9b1d26398}\label{classwatchylib_1_1GeoLocation_a5ebb883fa0a8ce5d3cb75bc9b1d26398}} 
+{\bfseries session}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1GeoLocation_a8cc4ea477bad14e6b763653fca5c2a1a}\label{classwatchylib_1_1GeoLocation_a8cc4ea477bad14e6b763653fca5c2a1a}} 
+{\bfseries data}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1GeoLocation_af80591385b72f71cf15b2986ea6988ff}\label{classwatchylib_1_1GeoLocation_af80591385b72f71cf15b2986ea6988ff}} 
+{\bfseries lat}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1GeoLocation_a3013eb095c9dfa2d576ebb32fcb19e00}\label{classwatchylib_1_1GeoLocation_a3013eb095c9dfa2d576ebb32fcb19e00}} 
+{\bfseries lon}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1GeoLocation_ab73a59fc2fe82ff516c132f720b85607}\label{classwatchylib_1_1GeoLocation_ab73a59fc2fe82ff516c132f720b85607}} 
+{\bfseries utc\+Offset}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1GeoLocation_ac58eb74a593fdb764fad129554204bd8}\label{classwatchylib_1_1GeoLocation_ac58eb74a593fdb764fad129554204bd8}} 
+{\bfseries country}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1GeoLocation_abeb7f5be33bca5e12be60d2e84353c2d}\label{classwatchylib_1_1GeoLocation_abeb7f5be33bca5e12be60d2e84353c2d}} 
+{\bfseries city}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1GeoLocation_aca3854deaa294ce1771a3a157ed5c226}\label{classwatchylib_1_1GeoLocation_aca3854deaa294ce1771a3a157ed5c226}} 
+{\bfseries country\+Code}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1GeoLocation_a32546035f874beb6c9a4a56363ea61cd}\label{classwatchylib_1_1GeoLocation_a32546035f874beb6c9a4a56363ea61cd}} 
+{\bfseries date\+Format}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1GeoLocation_aec54c1da4c1a18ad398cf23097b3c7ca}\label{classwatchylib_1_1GeoLocation_aec54c1da4c1a18ad398cf23097b3c7ca}} 
+list {\bfseries DMY\+\_\+\+COUNTRIES} = \mbox{[}\textquotesingle{}Italy\textquotesingle{}, \textquotesingle{}Ukraine\textquotesingle{}, \textquotesingle{}Romania\textquotesingle{}, \textquotesingle{}Netherlands\textquotesingle{}, \textquotesingle{}Mexico\textquotesingle{}, \textquotesingle{}Guatemala\textquotesingle{}, \textquotesingle{}Honduras\textquotesingle{}, \textquotesingle{}Brazil\textquotesingle{}, \textquotesingle{}Colombia\textquotesingle{}, \textquotesingle{}Chile\textquotesingle{}, \textquotesingle{}Argentina\textquotesingle{}, \textquotesingle{}Peru\textquotesingle{}, \textquotesingle{}Venezuela\textquotesingle{}, \textquotesingle{}Egypt\textquotesingle{}, \textquotesingle{}Algeria\textquotesingle{}, \textquotesingle{}Morocco\textquotesingle{}, \textquotesingle{}Tunisia\textquotesingle{}, \textquotesingle{}Somalia\textquotesingle{}, \textquotesingle{}Nigeria\textquotesingle{}, \textquotesingle{}Ethiopia\textquotesingle{}, \textquotesingle{}DRC\textquotesingle{}, \textquotesingle{}Tanzania\textquotesingle{}, \textquotesingle{}Sudan\textquotesingle{}, \textquotesingle{}Uganda\textquotesingle{}, \textquotesingle{}Turkey\textquotesingle{}, \textquotesingle{}Iraq\textquotesingle{}, \textquotesingle{}Saudi Arabia\textquotesingle{}, \textquotesingle{}Yemen\textquotesingle{}, \textquotesingle{}Tajikistan\textquotesingle{}, \textquotesingle{}Kyrgyzstan\textquotesingle{}, \textquotesingle{}Turkmenistan\textquotesingle{}, \textquotesingle{}Malaysia\textquotesingle{}, \textquotesingle{}Indonesia\textquotesingle{}, \textquotesingle{}Thailand\textquotesingle{}, \textquotesingle{}Cambodia\textquotesingle{}, \textquotesingle{}Pakistan\textquotesingle{}, \textquotesingle{}Bangladesh\textquotesingle{}, \textquotesingle{}Papua New Guinea\textquotesingle{}, \textquotesingle{}New Zealand\textquotesingle{}, \textquotesingle{}Philippines\textquotesingle{}, \textquotesingle{}Togo\textquotesingle{}, \textquotesingle{}Panama\textquotesingle{}, \textquotesingle{}Puerto Rico\textquotesingle{}, \textquotesingle{}Cayman Islands\textquotesingle{}, \textquotesingle{}Greenland\textquotesingle{}, \textquotesingle{}India\textquotesingle{}, \textquotesingle{}Russia\textquotesingle{}, \textquotesingle{}Vietnam\textquotesingle{}, \textquotesingle{}Germany\textquotesingle{}, \textquotesingle{}Iran\textquotesingle{}, \textquotesingle{}United Kingdom\textquotesingle{}, \textquotesingle{}France\textquotesingle{}, \textquotesingle{}Myanmar\textquotesingle{}, \textquotesingle{}Spain\textquotesingle{}, \textquotesingle{}Poland\textquotesingle{}, \textquotesingle{}Uzbekistan\textquotesingle{}, \textquotesingle{}Afghanistan\textquotesingle{}, \textquotesingle{}Nepal\textquotesingle{}, \textquotesingle{}Australia\textquotesingle{}, \textquotesingle{}Cameroon\textquotesingle{}, \textquotesingle{}Sri Lanka\textquotesingle{}\mbox{]}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1GeoLocation_af402a85294c0a0385d3fe59d38eabf48}\label{classwatchylib_1_1GeoLocation_af402a85294c0a0385d3fe59d38eabf48}} 
+list {\bfseries YMD\+\_\+\+COUNTRIES} = \mbox{[}\textquotesingle{}China\textquotesingle{}, \textquotesingle{}Japan\textquotesingle{}, \textquotesingle{}South Korea\textquotesingle{}, \textquotesingle{}North Korea\textquotesingle{}, \textquotesingle{}Taiwan\textquotesingle{}, \textquotesingle{}Hungary\textquotesingle{}, \textquotesingle{}Mongolia\textquotesingle{}, \textquotesingle{}Lithuania\textquotesingle{}, \textquotesingle{}Bhutan\textquotesingle{}\mbox{]}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1GeoLocation_a0258164fe226f3450b6594b9854fbdcd}\label{classwatchylib_1_1GeoLocation_a0258164fe226f3450b6594b9854fbdcd}} 
+list {\bfseries MDY\+\_\+\+COUNTRIES} = \mbox{[}\textquotesingle{}United States\textquotesingle{}, \textquotesingle{}South Africa\textquotesingle{}, \textquotesingle{}Kenya\textquotesingle{}, \textquotesingle{}Canada\textquotesingle{}, \textquotesingle{}Ghana\textquotesingle{}\mbox{]}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1GeoLocation_ab32b056f8c85aef98df192e4c5772d55}\label{classwatchylib_1_1GeoLocation_ab32b056f8c85aef98df192e4c5772d55}} 
+int {\bfseries DMY\+\_\+\+FORMAT} = 0
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1GeoLocation_ac15e98caca7a6cb3e69e25ccc7421e68}\label{classwatchylib_1_1GeoLocation_ac15e98caca7a6cb3e69e25ccc7421e68}} 
+int {\bfseries YMD\+\_\+\+FORMAT} = 1
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1GeoLocation_a895d7be867c00f7dec0a4322501a82ef}\label{classwatchylib_1_1GeoLocation_a895d7be867c00f7dec0a4322501a82ef}} 
+int {\bfseries MDY\+\_\+\+FORMAT} = 2
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1GeoLocation_a8c286d2d6b11f9bbfa8fdb21baae5b78}\label{classwatchylib_1_1GeoLocation_a8c286d2d6b11f9bbfa8fdb21baae5b78}} 
+list {\bfseries fields} = \mbox{[}\textquotesingle{}offset\textquotesingle{}, \textquotesingle{}country\textquotesingle{}, \textquotesingle{}city\textquotesingle{}, \textquotesingle{}lat\textquotesingle{}, \textquotesingle{}lon\textquotesingle{}, \textquotesingle{}country\+Code\textquotesingle{}\mbox{]}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1GeoLocation_ac131c84f8248fde6ca7a20b8c2caba1c}\label{classwatchylib_1_1GeoLocation_ac131c84f8248fde6ca7a20b8c2caba1c}} 
+dictionary {\bfseries data} = \{\}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for getting the current location from an IP address. 
+
+This is done by querying an IP geolocation API. The API used is ip-\/api.\+com. This is a great free service that can be used (non-\/commerically) without an API key. The resulting data is used for time, weather, and date formatting. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classwatchylib_1_1GeoLocation_a4d87a546a13728bb551d4483f2057126}\label{classwatchylib_1_1GeoLocation_a4d87a546a13728bb551d4483f2057126}} 
+\index{watchylib.GeoLocation@{watchylib.GeoLocation}!geolocate@{geolocate}}
+\index{geolocate@{geolocate}!watchylib.GeoLocation@{watchylib.GeoLocation}}
+\doxysubsubsection{\texorpdfstring{geolocate()}{geolocate()}}
+{\footnotesize\ttfamily def watchylib.\+Geo\+Location.\+geolocate (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Loads the \mbox{\hyperlink{classwatchylib_1_1GeoLocation}{Geo\+Location}} data. 
+
+The geolocation data is loaded from the internet or from a saved file if the internet is not available. \mbox{\Hypertarget{classwatchylib_1_1GeoLocation_ad6b4be8182032ae72ee2d6acb0b013d1}\label{classwatchylib_1_1GeoLocation_ad6b4be8182032ae72ee2d6acb0b013d1}} 
+\index{watchylib.GeoLocation@{watchylib.GeoLocation}!loadProps@{loadProps}}
+\index{loadProps@{loadProps}!watchylib.GeoLocation@{watchylib.GeoLocation}}
+\doxysubsubsection{\texorpdfstring{loadProps()}{loadProps()}}
+{\footnotesize\ttfamily  None watchylib.\+Geo\+Location.\+load\+Props (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Loads the \mbox{\hyperlink{classwatchylib_1_1GeoLocation}{Geo\+Location}} properties from the data. 
+
+This is called after the data is loaded from the internet or from a file. This may update the time or date format. \mbox{\Hypertarget{classwatchylib_1_1GeoLocation_a75801e04dd30ddbc97098e562150942e}\label{classwatchylib_1_1GeoLocation_a75801e04dd30ddbc97098e562150942e}} 
+\index{watchylib.GeoLocation@{watchylib.GeoLocation}!refresh@{refresh}}
+\index{refresh@{refresh}!watchylib.GeoLocation@{watchylib.GeoLocation}}
+\doxysubsubsection{\texorpdfstring{refresh()}{refresh()}}
+{\footnotesize\ttfamily def watchylib.\+Geo\+Location.\+refresh (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Attempts to refresh the \mbox{\hyperlink{classwatchylib_1_1GeoLocation}{Geo\+Location}} data. 
+
+The geolocation refresh may fail if the internet is not available. Refreshing may be needed if the user travels to a new location. e.\+g. If the user travels to a different town or suburb, the temperature and weather may be different. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+watchylib.\+py\end{DoxyCompactItemize}

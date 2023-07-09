@@ -1,0 +1,698 @@
+\hypertarget{classwatchylib_1_1Display}{}\doxysection{watchylib.\+Display Class Reference}
+\label{classwatchylib_1_1Display}\index{watchylib.Display@{watchylib.Display}}
+
+
+e\+Paper display driver.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a29085c6f78fba6f325a4f143976e6e33}\label{classwatchylib_1_1Display_a29085c6f78fba6f325a4f143976e6e33}} 
+def {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, display)
+\item 
+bool \mbox{\hyperlink{classwatchylib_1_1Display_a37b93e14131959adbb0fad7d79287b1a}{grey\+Mode}} (self)
+\begin{DoxyCompactList}\small\item\em Grey mode setting. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_adaeef9a97423e2cb8438e31065af00de}\label{classwatchylib_1_1Display_adaeef9a97423e2cb8438e31065af00de}} 
+def {\bfseries grey\+Mode} (self, enabled)
+\item 
+bool \mbox{\hyperlink{classwatchylib_1_1Display_a27d636d11ed6fd29e538ae3b11e1808a}{dark\+Mode}} (self)
+\begin{DoxyCompactList}\small\item\em Dark mode setting. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a749bd24306c1a1bd91e0a503a05b1a20}\label{classwatchylib_1_1Display_a749bd24306c1a1bd91e0a503a05b1a20}} 
+None {\bfseries dark\+Mode} (self, enabled)
+\item 
+bool \mbox{\hyperlink{classwatchylib_1_1Display_a41b5195d55310db4bfdf3569ce9f8a0d}{invert\+Border}} (self)
+\begin{DoxyCompactList}\small\item\em Invert border setting. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a7debb2faad986e93b379415e1f6ab18a}\label{classwatchylib_1_1Display_a7debb2faad986e93b379415e1f6ab18a}} 
+None {\bfseries invert\+Border} (self, enabled)
+\item 
+bool \mbox{\hyperlink{classwatchylib_1_1Display_adf0c55ee42e8bf2512b00eb88766246a}{full\+Refresh}} (self)
+\begin{DoxyCompactList}\small\item\em If this setting it true, all refreshs will be slow refreshes. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a2e3165aa9b7fe9270980666f23feaf90}\label{classwatchylib_1_1Display_a2e3165aa9b7fe9270980666f23feaf90}} 
+def {\bfseries full\+Refresh} (self, enabled)
+\item 
+bool \mbox{\hyperlink{classwatchylib_1_1Display_aa79f84d45007889a675c8d75b6771050}{initial\+Refresh}} (self)
+\begin{DoxyCompactList}\small\item\em If this setting is true, the next refresh will be a full refresh. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a64ed89b061f4c4d01a9aad3aefbc202f}\label{classwatchylib_1_1Display_a64ed89b061f4c4d01a9aad3aefbc202f}} 
+def {\bfseries initial\+Refresh} (self, enabled)
+\item 
+bool \mbox{\hyperlink{classwatchylib_1_1Display_a407c4b6c5c9113f99f61ffa419684e8f}{fast\+Refresh}} (self)
+\begin{DoxyCompactList}\small\item\em If this setting is true, the driver will do a fast refresh. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a4279942d571214080c4ccb0369d43775}\label{classwatchylib_1_1Display_a4279942d571214080c4ccb0369d43775}} 
+def {\bfseries fast\+Refresh} (self, enabled)
+\item 
+def \mbox{\hyperlink{classwatchylib_1_1Display_a571df8cbd98fa21e29a228711d541da4}{set\+Window}} (self, x1, y1, x2, y2)
+\begin{DoxyCompactList}\small\item\em Sets the area of the display to update. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classwatchylib_1_1Display_a1b8fe8cd82dc30581a00a304d3f7bf2d}{clear\+Window}} (self)
+\begin{DoxyCompactList}\small\item\em Clear the update window return to updating the whole display. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classwatchylib_1_1Display_adb72259a642c16c2de9ce4baa2b659c2}{refresh}} (self)
+\begin{DoxyCompactList}\small\item\em Run a display update with whatever settings are currently set. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classwatchylib_1_1Display_a818a81b7c86af1a5eeab9690ce044f57}{opposite}} (self, colour)
+\begin{DoxyCompactList}\small\item\em Returns to opposite of the given colour. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classwatchylib_1_1Display_a78cf67221f9d2520a00d6af4a5547813}{rectangle}} (self, x, y, width, height, colour=None, no\+Fill=False, outline\+Thickness=None, rounding\+Radius=0)
+\begin{DoxyCompactList}\small\item\em Creates a rectangle object. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classwatchylib_1_1Display_ab1c8c5a05da7ba277a50f0641baef895}{circle}} (self, x, y, radius, colour=None, no\+Fill=False, outline\+Thickness=0)
+\begin{DoxyCompactList}\small\item\em Creates a circle object. \end{DoxyCompactList}\item 
+def \mbox{\hyperlink{classwatchylib_1_1Display_afaef166ff8d0d393e43ec994b55be953}{triangle}} (self, p1, p2, p3, colour=None, no\+Fill=False, outline\+Thickness=0)
+\begin{DoxyCompactList}\small\item\em Creates a triangle object. \end{DoxyCompactList}\item 
+vectorio.\+Polygon \mbox{\hyperlink{classwatchylib_1_1Display_a15e95797452f6c2f08364c7d22b7fa0b}{polygon}} (self, x, y, points, colour=None)
+\begin{DoxyCompactList}\small\item\em Creates a polygon object. \end{DoxyCompactList}\item 
+adafruit\+\_\+display\+\_\+shapes.\+line.\+Line \mbox{\hyperlink{classwatchylib_1_1Display_a1a9247d34d8ce9a3123b7b420cbb8bf5}{line}} (self, p1, p2, colour=None)
+\begin{DoxyCompactList}\small\item\em Creates a line object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a3e9f00477bd1a64f98b75d745f61fd72}\label{classwatchylib_1_1Display_a3e9f00477bd1a64f98b75d745f61fd72}} 
+displayio.\+Tile\+Grid {\bfseries image} (self, filename, x, y)
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a69853de924260fcd3daafe78e8cec1be}\label{classwatchylib_1_1Display_a69853de924260fcd3daafe78e8cec1be}} 
+displayio.\+Tile\+Grid {\bfseries sprites} (self, filename, x, y, tile\+Width, tile\+Height, default\+Sprite=0)
+\item 
+def \mbox{\hyperlink{classwatchylib_1_1Display_aadffb41c90725ab3ec1d21ba48568dc0}{text}} (self, text, x=None, y=None, colour=None, align=None, bg=False, font=None, scale=1)
+\begin{DoxyCompactList}\small\item\em Creates a text object on the display. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a877b4b4395dd2f57aa6c17d2939e43c7}\label{classwatchylib_1_1Display_a877b4b4395dd2f57aa6c17d2939e43c7}} 
+{\bfseries display}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a37cc47bf74b5ffd8220ab387d8c9f880}\label{classwatchylib_1_1Display_a37cc47bf74b5ffd8220ab387d8c9f880}} 
+{\bfseries objects}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a1110a42010a4d92d6bbbaa8c919b3bba}\label{classwatchylib_1_1Display_a1110a42010a4d92d6bbbaa8c919b3bba}} 
+{\bfseries next\+Update\+Time}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a5d90de02c5bd93e522273939e562eafc}\label{classwatchylib_1_1Display_a5d90de02c5bd93e522273939e562eafc}} 
+{\bfseries fast\+Refresh}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_aa05ef2af11bb8db79f49f7361c058b72}\label{classwatchylib_1_1Display_aa05ef2af11bb8db79f49f7361c058b72}} 
+{\bfseries initial\+Refresh}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_ae1ee7329639c479256e424805b411b66}\label{classwatchylib_1_1Display_ae1ee7329639c479256e424805b411b66}} 
+{\bfseries BLACK}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a25e0dd4a7e5217a6febd4bb03003c3e9}\label{classwatchylib_1_1Display_a25e0dd4a7e5217a6febd4bb03003c3e9}} 
+{\bfseries WHITE}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_ace1866dd320ce518e0090283d4479f08}\label{classwatchylib_1_1Display_ace1866dd320ce518e0090283d4479f08}} 
+{\bfseries COLOUR\+\_\+\+MODE}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a52f2f19292b55d89153f6554015ab561}\label{classwatchylib_1_1Display_a52f2f19292b55d89153f6554015ab561}} 
+{\bfseries BORDER\+\_\+\+WAVEFORM}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_ae5151f69aa08ab29be201048a0d758ac}\label{classwatchylib_1_1Display_ae5151f69aa08ab29be201048a0d758ac}} 
+{\bfseries mode\+Changed}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a956eb2e9315c8074adb20d3d5d3e4477}\label{classwatchylib_1_1Display_a956eb2e9315c8074adb20d3d5d3e4477}} 
+{\bfseries UPDATE\+\_\+\+MODE}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a055a7dcd648fbacd61068452f919fe4a}\label{classwatchylib_1_1Display_a055a7dcd648fbacd61068452f919fe4a}} 
+{\bfseries frame\+Delay}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a54b074c43ca68da360f162b9e2655143}\label{classwatchylib_1_1Display_a54b074c43ca68da360f162b9e2655143}} 
+{\bfseries FIRST\+\_\+\+COLUMN}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a1d654fe922758f5141c9c61620ce9b1e}\label{classwatchylib_1_1Display_a1d654fe922758f5141c9c61620ce9b1e}} 
+{\bfseries LAST\+\_\+\+COLUMN}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a8c818eb530111609b7ca393a2ef5bf7e}\label{classwatchylib_1_1Display_a8c818eb530111609b7ca393a2ef5bf7e}} 
+{\bfseries FIRST\+\_\+\+ROW}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a072b33b76b6497f29dda769e34d47d1a}\label{classwatchylib_1_1Display_a072b33b76b6497f29dda769e34d47d1a}} 
+{\bfseries LAST\+\_\+\+ROW}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_ad094946bd03305fbac0605cba4d5037a}\label{classwatchylib_1_1Display_ad094946bd03305fbac0605cba4d5037a}} 
+{\bfseries X\+\_\+\+WINDOW\+\_\+\+START}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a84c1f2b8253a82ba1417a36d1fef262a}\label{classwatchylib_1_1Display_a84c1f2b8253a82ba1417a36d1fef262a}} 
+{\bfseries X\+\_\+\+WINDOW\+\_\+\+END}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a4d2bd83ab4f9627de6afd85faa4d15b9}\label{classwatchylib_1_1Display_a4d2bd83ab4f9627de6afd85faa4d15b9}} 
+{\bfseries Y\+\_\+\+WINDOW\+\_\+\+START}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_ac93fccc067ff5e6e14c4483607509b4b}\label{classwatchylib_1_1Display_ac93fccc067ff5e6e14c4483607509b4b}} 
+{\bfseries Y\+\_\+\+WINDOW\+\_\+\+END}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_aed202bc9b66fde54dfa36ba906e20ce7}\label{classwatchylib_1_1Display_aed202bc9b66fde54dfa36ba906e20ce7}} 
+{\bfseries update\+Sequence}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a538f34544b0fa99f36224a10c3c92654}\label{classwatchylib_1_1Display_a538f34544b0fa99f36224a10c3c92654}} 
+int \mbox{\hyperlink{classwatchylib_1_1Display_a538f34544b0fa99f36224a10c3c92654}{BLACK\+\_\+\+COLOUR}} = 0x\+FFFFFF
+\begin{DoxyCompactList}\small\item\em Black colour constant, or white in dark mode. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_acd4858ea1c7cb2188f5fd9a47f84563f}\label{classwatchylib_1_1Display_acd4858ea1c7cb2188f5fd9a47f84563f}} 
+int \mbox{\hyperlink{classwatchylib_1_1Display_acd4858ea1c7cb2188f5fd9a47f84563f}{WHITE\+\_\+\+COLOUR}} = 0x000000
+\begin{DoxyCompactList}\small\item\em White colour constant, or black in dark mode. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_aee16fcbd5c295099a14213028dffe009}\label{classwatchylib_1_1Display_aee16fcbd5c295099a14213028dffe009}} 
+int {\bfseries DELAY} = 0x80
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_af56f98b278d8be4f2ac54bb216d6e175}\label{classwatchylib_1_1Display_af56f98b278d8be4f2ac54bb216d6e175}} 
+int \mbox{\hyperlink{classwatchylib_1_1Display_af56f98b278d8be4f2ac54bb216d6e175}{WIDTH}} = 200
+\begin{DoxyCompactList}\small\item\em The width of the display in pixels. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a2bf98ebde1e19aeba96146cafcb054cc}\label{classwatchylib_1_1Display_a2bf98ebde1e19aeba96146cafcb054cc}} 
+int \mbox{\hyperlink{classwatchylib_1_1Display_a2bf98ebde1e19aeba96146cafcb054cc}{HEIGHT}} = 200
+\begin{DoxyCompactList}\small\item\em The height of the display in pixels. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a3f371137314491f9d1d8401fdec0ec9e}\label{classwatchylib_1_1Display_a3f371137314491f9d1d8401fdec0ec9e}} 
+int {\bfseries X\+\_\+\+OFFSET} = 0
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a3f7f89278314f7b7d3c5c9eb5c614a60}\label{classwatchylib_1_1Display_a3f7f89278314f7b7d3c5c9eb5c614a60}} 
+int {\bfseries Y\+\_\+\+OFFSET} = 0
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_afade1e5ae6beb61dcd7d67c39e972529}\label{classwatchylib_1_1Display_afade1e5ae6beb61dcd7d67c39e972529}} 
+int {\bfseries FIRST\+\_\+\+COLUMN} = X\+\_\+\+OFFSET
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a810d1d630083674054cabac8401fa4f3}\label{classwatchylib_1_1Display_a810d1d630083674054cabac8401fa4f3}} 
+tuple {\bfseries LAST\+\_\+\+COLUMN} = (X\+\_\+\+OFFSET + \mbox{\hyperlink{classwatchylib_1_1Display_af56f98b278d8be4f2ac54bb216d6e175}{WIDTH}} -\/ 1)
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_aaf77e3e234752321f66c020f3d34aa75}\label{classwatchylib_1_1Display_aaf77e3e234752321f66c020f3d34aa75}} 
+int {\bfseries FIRST\+\_\+\+ROW} = Y\+\_\+\+OFFSET
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_ade6459804ba53c3641a9b56fc23c300b}\label{classwatchylib_1_1Display_ade6459804ba53c3641a9b56fc23c300b}} 
+tuple {\bfseries LAST\+\_\+\+ROW} = (Y\+\_\+\+OFFSET + \mbox{\hyperlink{classwatchylib_1_1Display_a2bf98ebde1e19aeba96146cafcb054cc}{HEIGHT}} -\/ 1)
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_aab03777c0141cca595dcee3068cd2dfa}\label{classwatchylib_1_1Display_aab03777c0141cca595dcee3068cd2dfa}} 
+tuple {\bfseries X\+\_\+\+WINDOW\+\_\+\+START} = (FIRST\+\_\+\+COLUMN $>$$>$ 3)
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a1727611a1a84b7e64367e438b2d0b34f}\label{classwatchylib_1_1Display_a1727611a1a84b7e64367e438b2d0b34f}} 
+tuple {\bfseries X\+\_\+\+WINDOW\+\_\+\+END} = (LAST\+\_\+\+COLUMN $>$$>$ 3)
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a3cfa909a3f15440c709c1ad55de2c09e}\label{classwatchylib_1_1Display_a3cfa909a3f15440c709c1ad55de2c09e}} 
+int {\bfseries Y\+\_\+\+WINDOW\+\_\+\+START} = FIRST\+\_\+\+ROW
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_ab740636ab08608322ca90fdc3874f8e5}\label{classwatchylib_1_1Display_ab740636ab08608322ca90fdc3874f8e5}} 
+tuple {\bfseries Y\+\_\+\+WINDOW\+\_\+\+END} = LAST\+\_\+\+ROW
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a5b8b1d93bafe0eb7e2e0b0c5ef3c87ac}\label{classwatchylib_1_1Display_a5b8b1d93bafe0eb7e2e0b0c5ef3c87ac}} 
+int {\bfseries EVEN\+\_\+\+FIRST} = 0x0
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a4a16aa74b32f953fd09aa54aed904eaa}\label{classwatchylib_1_1Display_a4a16aa74b32f953fd09aa54aed904eaa}} 
+int {\bfseries ODD\+\_\+\+FIRST} = 0x4
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a44c1e4848032869a451cab0fa8ea271e}\label{classwatchylib_1_1Display_a44c1e4848032869a451cab0fa8ea271e}} 
+int {\bfseries NO\+\_\+\+INTERLACE} = 0x0
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a5945125be6546f49ecdc74b443069ddf}\label{classwatchylib_1_1Display_a5945125be6546f49ecdc74b443069ddf}} 
+int {\bfseries INTERLACE} = 0x2
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a0c167d07b004bb49e601666d51283719}\label{classwatchylib_1_1Display_a0c167d07b004bb49e601666d51283719}} 
+int {\bfseries SCAN\+\_\+\+FORWARD} = 0x0
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_ab61bc6a06d47ba03534bdf689a1f9616}\label{classwatchylib_1_1Display_ab61bc6a06d47ba03534bdf689a1f9616}} 
+int {\bfseries SCAN\+\_\+\+BACKWARD} = 0x1
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a317b17b195f123f86529d4b13f776fad}\label{classwatchylib_1_1Display_a317b17b195f123f86529d4b13f776fad}} 
+int {\bfseries WHITE\+\_\+\+BORDER} = 0x01
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_ac9f464b1b0f847a640d860c17f920d7f}\label{classwatchylib_1_1Display_ac9f464b1b0f847a640d860c17f920d7f}} 
+int {\bfseries BLACK\+\_\+\+BORDER} = 0x00
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_ae4ce178b437e55535001d833c2524d8a}\label{classwatchylib_1_1Display_ae4ce178b437e55535001d833c2524d8a}} 
+int {\bfseries EXTERNAL\+\_\+\+SENSOR} = 0x48
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_afe2406dcc4b5c5f721f556047ed04a93}\label{classwatchylib_1_1Display_afe2406dcc4b5c5f721f556047ed04a93}} 
+int {\bfseries INTERNAL\+\_\+\+SENSOR} = 0x80
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_ac8d817b14a6121b482144c57e7371fde}\label{classwatchylib_1_1Display_ac8d817b14a6121b482144c57e7371fde}} 
+int {\bfseries RED\+\_\+\+ENABLE} = 0x00
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_ab92f24a5cf56e3133797ac643d777748}\label{classwatchylib_1_1Display_ab92f24a5cf56e3133797ac643d777748}} 
+int {\bfseries RED\+\_\+\+DISABLE} = 0x40
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a8f40aacb417c924f26d1d89581d51501}\label{classwatchylib_1_1Display_a8f40aacb417c924f26d1d89581d51501}} 
+int {\bfseries RED\+\_\+\+INVERT} = 0x80
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_aedf9fff1827f5bced3f56429d1fa228b}\label{classwatchylib_1_1Display_aedf9fff1827f5bced3f56429d1fa228b}} 
+int {\bfseries BLACK\+\_\+\+ENABLE} = 0x00
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_ae6ae70fe87b6bb8fed76d17e378390b1}\label{classwatchylib_1_1Display_ae6ae70fe87b6bb8fed76d17e378390b1}} 
+int {\bfseries BLACK\+\_\+\+DISABLE} = 0x04
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a991cb28dfc49ea2ade6ef497914bdcd1}\label{classwatchylib_1_1Display_a991cb28dfc49ea2ade6ef497914bdcd1}} 
+int {\bfseries BLACK\+\_\+\+INVERT} = 0x08
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_adc275ed9d52400b8b97a6c6b0fc6cce9}\label{classwatchylib_1_1Display_adc275ed9d52400b8b97a6c6b0fc6cce9}} 
+int {\bfseries Y\+\_\+\+FORWARDS} = 0x02
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a9e7b887025c3193ab85b82ed8be5f7fb}\label{classwatchylib_1_1Display_a9e7b887025c3193ab85b82ed8be5f7fb}} 
+int {\bfseries Y\+\_\+\+BACKWARDS} = 0x00
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_ab6e99f78e70ed32bd0220bd2d67130a8}\label{classwatchylib_1_1Display_ab6e99f78e70ed32bd0220bd2d67130a8}} 
+int {\bfseries X\+\_\+\+FORWARDS} = 0x01
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a62c7a7977297ff5d07b8db9c1d665b36}\label{classwatchylib_1_1Display_a62c7a7977297ff5d07b8db9c1d665b36}} 
+int {\bfseries X\+\_\+\+BACKWARDS} = 0x00
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a6275cfdc474fab5e80de3de5088789bd}\label{classwatchylib_1_1Display_a6275cfdc474fab5e80de3de5088789bd}} 
+int {\bfseries RIGHT\+\_\+\+THEN\+\_\+\+DOWN} = 0x00
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a53f5a6c57c663a468609c1979118b2ba}\label{classwatchylib_1_1Display_a53f5a6c57c663a468609c1979118b2ba}} 
+int {\bfseries DOWN\+\_\+\+THEN\+\_\+\+RIGHT} = 0x04
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_af2d2b471613d29776b1bdc9901367c66}\label{classwatchylib_1_1Display_af2d2b471613d29776b1bdc9901367c66}} 
+int {\bfseries MODE\+\_\+\+NORMAL} = 0x00
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_ad467d5d19c1f4ba38784b268e1219882}\label{classwatchylib_1_1Display_ad467d5d19c1f4ba38784b268e1219882}} 
+int {\bfseries MODE\+\_\+\+SLEEP\+\_\+1} = 0x01
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a214487299e8f884262d9e94b03af52b6}\label{classwatchylib_1_1Display_a214487299e8f884262d9e94b03af52b6}} 
+int {\bfseries MODE\+\_\+\+SLEEP\+\_\+2} = 0x03
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a57f871e32f44531eb6d50924bbfe452b}\label{classwatchylib_1_1Display_a57f871e32f44531eb6d50924bbfe452b}} 
+int {\bfseries U\+\_\+\+CLOCK\+\_\+\+ON} = 0x80
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a4bfc9b1682782f99a2c5b62c4b113617}\label{classwatchylib_1_1Display_a4bfc9b1682782f99a2c5b62c4b113617}} 
+int {\bfseries U\+\_\+\+ANALOG\+\_\+\+ON} = 0x40
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_ad370d6b9ba8c23e6523d1a5f2734c7ba}\label{classwatchylib_1_1Display_ad370d6b9ba8c23e6523d1a5f2734c7ba}} 
+int {\bfseries U\+\_\+\+LOAD\+\_\+\+TEMP} = 0x20
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a1773b56a9055b4b1d48456046794dc29}\label{classwatchylib_1_1Display_a1773b56a9055b4b1d48456046794dc29}} 
+int {\bfseries U\+\_\+\+LOAD\+\_\+\+LUT} = 0x10
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_aa106abc97dc50141b08a9a78bbf2c152}\label{classwatchylib_1_1Display_aa106abc97dc50141b08a9a78bbf2c152}} 
+int {\bfseries U\+\_\+\+DISP\+\_\+\+MODE\+\_\+1} = 0x00
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a73b8a364be4c60581371a5a5db70387a}\label{classwatchylib_1_1Display_a73b8a364be4c60581371a5a5db70387a}} 
+int {\bfseries U\+\_\+\+DISP\+\_\+\+MODE\+\_\+2} = 0x08
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a212a71a08e70cffaa10653b2ddbe3cf1}\label{classwatchylib_1_1Display_a212a71a08e70cffaa10653b2ddbe3cf1}} 
+int {\bfseries U\+\_\+\+OUTPUT} = 0x04
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_aa222dbe2691f74e0676812685edf9e5d}\label{classwatchylib_1_1Display_aa222dbe2691f74e0676812685edf9e5d}} 
+int {\bfseries U\+\_\+\+ANALOG\+\_\+\+OFF} = 0x02
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a9b18b398e78df6e07b57b2f7b8f0c38d}\label{classwatchylib_1_1Display_a9b18b398e78df6e07b57b2f7b8f0c38d}} 
+int {\bfseries U\+\_\+\+CLOCK\+\_\+\+OFF} = 0x01
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_aea08096e26cbeac7126780715e37dd56}\label{classwatchylib_1_1Display_aea08096e26cbeac7126780715e37dd56}} 
+tuple {\bfseries U\+\_\+\+DISPLAY} = (U\+\_\+\+OUTPUT $\vert$ U\+\_\+\+LOAD\+\_\+\+LUT)
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a221dffd1d7d69c4bfbc128f1c8148fe8}\label{classwatchylib_1_1Display_a221dffd1d7d69c4bfbc128f1c8148fe8}} 
+float {\bfseries SLOW\+\_\+\+UPDATE\+\_\+\+TIME} = 5.\+0
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a437d87470751a7fe568a4d6a4db0b821}\label{classwatchylib_1_1Display_a437d87470751a7fe568a4d6a4db0b821}} 
+float {\bfseries FAST\+\_\+\+UPDATE\+\_\+\+TIME} = 0.\+2
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_ac6bdfd46b24818c60f8c634393d52fa6}\label{classwatchylib_1_1Display_ac6bdfd46b24818c60f8c634393d52fa6}} 
+int {\bfseries GATE\+\_\+\+SETTINGS} = EVEN\+\_\+\+FIRST $\vert$ NO\+\_\+\+INTERLACE $\vert$ SCAN\+\_\+\+FORWARD
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_ab35d079e0042b1f96253e946cbf44047}\label{classwatchylib_1_1Display_ab35d079e0042b1f96253e946cbf44047}} 
+int {\bfseries ENTRY\+\_\+\+MODE} = X\+\_\+\+FORWARDS $\vert$ Y\+\_\+\+FORWARDS $\vert$ RIGHT\+\_\+\+THEN\+\_\+\+DOWN
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a10d019963f473c032cf954b3ac665d77}\label{classwatchylib_1_1Display_a10d019963f473c032cf954b3ac665d77}} 
+int {\bfseries COLOUR\+\_\+\+MODE} = RED\+\_\+\+DISABLE $\vert$ BLACK\+\_\+\+INVERT
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_ac5792c2da634eeff4166c63ac26d09d1}\label{classwatchylib_1_1Display_ac5792c2da634eeff4166c63ac26d09d1}} 
+int {\bfseries BORDER\+\_\+\+WAVEFORM} = BLACK\+\_\+\+BORDER
+\item 
+tuple {\bfseries SLOW\+\_\+\+UPDATE}
+\item 
+tuple {\bfseries FAST\+\_\+\+UPDATE}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a6ea78e3e7b5cc38167990eeb12de875e}\label{classwatchylib_1_1Display_a6ea78e3e7b5cc38167990eeb12de875e}} 
+tuple {\bfseries UPDATE\+\_\+\+MODE} = SLOW\+\_\+\+UPDATE
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_afa53b1d2df2442723db5e92e1ae53943}\label{classwatchylib_1_1Display_afa53b1d2df2442723db5e92e1ae53943}} 
+int {\bfseries CMD\+\_\+\+GATE\+\_\+\+SETTING} = 0x01
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a18101fe6bf8e0044434b5f0204b2766d}\label{classwatchylib_1_1Display_a18101fe6bf8e0044434b5f0204b2766d}} 
+int {\bfseries CMD\+\_\+\+DEEP\+\_\+\+SLEEP} = 0x10
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a52ccc771bda34691cfe7c6e332b28ca6}\label{classwatchylib_1_1Display_a52ccc771bda34691cfe7c6e332b28ca6}} 
+int {\bfseries CMD\+\_\+\+ENTRY\+\_\+\+MODE} = 0x11
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a72284855be7fe461664615a23dc1f8b4}\label{classwatchylib_1_1Display_a72284855be7fe461664615a23dc1f8b4}} 
+int {\bfseries CMD\+\_\+\+SOFT\+\_\+\+RESET} = 0x12
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_af759f3d55638e183289139b9f0eaa68f}\label{classwatchylib_1_1Display_af759f3d55638e183289139b9f0eaa68f}} 
+int {\bfseries CMD\+\_\+\+TEMP\+\_\+\+SENSOR} = 0x18
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a521393d83678418c8ce32d39870c5e62}\label{classwatchylib_1_1Display_a521393d83678418c8ce32d39870c5e62}} 
+int {\bfseries CMD\+\_\+\+PANEL\+\_\+\+COLOURS} = 0x21
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_ad040030e28d2e30ff2a33e9420436dac}\label{classwatchylib_1_1Display_ad040030e28d2e30ff2a33e9420436dac}} 
+int {\bfseries CMD\+\_\+\+MASTER\+\_\+\+ACTIVATE} = 0x20
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_aacad52a127ce955d52b4a214d445a79f}\label{classwatchylib_1_1Display_aacad52a127ce955d52b4a214d445a79f}} 
+int {\bfseries CMD\+\_\+\+UPDATE\+\_\+\+SEQUENCE} = 0x22
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a86c5e10d87e37e86c0c913bd0c4e99ab}\label{classwatchylib_1_1Display_a86c5e10d87e37e86c0c913bd0c4e99ab}} 
+int {\bfseries CMD\+\_\+\+BORDER\+\_\+\+WAVEFORM} = 0x3C
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_aade878504ecf3e5bbe0da087efae7300}\label{classwatchylib_1_1Display_aade878504ecf3e5bbe0da087efae7300}} 
+int {\bfseries CMD\+\_\+\+WRITE\+\_\+\+RAM} = 0x24
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a554746146028a6a4c577f5501457d109}\label{classwatchylib_1_1Display_a554746146028a6a4c577f5501457d109}} 
+int {\bfseries CMD\+\_\+\+X\+\_\+\+WINDOW} = 0x44
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a2c7f153a964fb0831c4e5a9ce0d188fe}\label{classwatchylib_1_1Display_a2c7f153a964fb0831c4e5a9ce0d188fe}} 
+int {\bfseries CMD\+\_\+\+Y\+\_\+\+WINDOW} = 0x45
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a37f1413bb08056fe8066848133ce5a1b}\label{classwatchylib_1_1Display_a37f1413bb08056fe8066848133ce5a1b}} 
+int {\bfseries CMD\+\_\+\+X\+\_\+\+OFFSET} = 0x4E
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a61787bf39876a67d18882b32b25455c0}\label{classwatchylib_1_1Display_a61787bf39876a67d18882b32b25455c0}} 
+int {\bfseries CMD\+\_\+\+Y\+\_\+\+OFFSET} = 0x4F
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a3a7a1c052c4fd1fe8baf412ef41d1771}\label{classwatchylib_1_1Display_a3a7a1c052c4fd1fe8baf412ef41d1771}} 
+tuple {\bfseries TOP\+\_\+\+LEFT} = (0.\+0, 0.\+0)
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a0d6cc0439292eb1a60e5d865012d227a}\label{classwatchylib_1_1Display_a0d6cc0439292eb1a60e5d865012d227a}} 
+tuple {\bfseries TOP\+\_\+\+CENTRE} = (0.\+5, 0.\+0)
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a24532b346be35a779c262fd62e314274}\label{classwatchylib_1_1Display_a24532b346be35a779c262fd62e314274}} 
+tuple {\bfseries TOP\+\_\+\+RIGHT} = (1.\+0, 0.\+0)
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_ae15ebfc76edf2cbf8939b063c4be9a37}\label{classwatchylib_1_1Display_ae15ebfc76edf2cbf8939b063c4be9a37}} 
+tuple {\bfseries CENTRE\+\_\+\+LEFT} = (0.\+0, 0.\+5)
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_af278b00b2808a9d8ff0b93b2f6728bc2}\label{classwatchylib_1_1Display_af278b00b2808a9d8ff0b93b2f6728bc2}} 
+tuple {\bfseries CENTRE} = (0.\+5, 0.\+5)
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a801c097148abfbe9d26c727342af8414}\label{classwatchylib_1_1Display_a801c097148abfbe9d26c727342af8414}} 
+tuple {\bfseries CENTRE\+\_\+\+RIGHT} = (1.\+0, 0.\+5)
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_acf2db68adffab27951b0ff987bb15e61}\label{classwatchylib_1_1Display_acf2db68adffab27951b0ff987bb15e61}} 
+tuple {\bfseries BOTTOM\+\_\+\+LEFT} = (0.\+0, 1.\+0)
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a5310261ecce303c18f76d15b9ec050c6}\label{classwatchylib_1_1Display_a5310261ecce303c18f76d15b9ec050c6}} 
+tuple {\bfseries BOTTOM\+\_\+\+CENTRE} = (0.\+5, 1.\+0)
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Display_a0fdf73f1179e7e3233ebdb275393b1c9}\label{classwatchylib_1_1Display_a0fdf73f1179e7e3233ebdb275393b1c9}} 
+tuple {\bfseries BOTTOM\+\_\+\+RIGHT} = (1.\+0, 1.\+0)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+e\+Paper display driver. 
+
+Provides functions for drawing to the display. The display is a 200x200 black and white EPD display with a SSD1681 driver. A basic driver is provided in the firmware to draw to the display. That at least lets us see the terminal output. But it\textquotesingle{}s slow and doesn\textquotesingle{}t support many features. This replacement driver allows a lot more control. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classwatchylib_1_1Display_ab1c8c5a05da7ba277a50f0641baef895}\label{classwatchylib_1_1Display_ab1c8c5a05da7ba277a50f0641baef895}} 
+\index{watchylib.Display@{watchylib.Display}!circle@{circle}}
+\index{circle@{circle}!watchylib.Display@{watchylib.Display}}
+\doxysubsubsection{\texorpdfstring{circle()}{circle()}}
+{\footnotesize\ttfamily def watchylib.\+Display.\+circle (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{y,  }\item[{}]{radius,  }\item[{}]{colour = {\ttfamily None},  }\item[{}]{no\+Fill = {\ttfamily False},  }\item[{}]{outline\+Thickness = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Creates a circle object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x position of the centre of the circle. \\
+\hline
+{\em y} & The y position of the centre of the circle. \\
+\hline
+{\em radius} & The radius of the circle. \\
+\hline
+{\em no\+Fill} & If true, the circle will be an outline only. \\
+\hline
+{\em colour} & The colour of the circle (either BLACK or WHITE from this class). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The circle object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classwatchylib_1_1Display_a1b8fe8cd82dc30581a00a304d3f7bf2d}\label{classwatchylib_1_1Display_a1b8fe8cd82dc30581a00a304d3f7bf2d}} 
+\index{watchylib.Display@{watchylib.Display}!clearWindow@{clearWindow}}
+\index{clearWindow@{clearWindow}!watchylib.Display@{watchylib.Display}}
+\doxysubsubsection{\texorpdfstring{clearWindow()}{clearWindow()}}
+{\footnotesize\ttfamily def watchylib.\+Display.\+clear\+Window (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Clear the update window return to updating the whole display. 
+
+This will set the update window to the whole display. \mbox{\Hypertarget{classwatchylib_1_1Display_a27d636d11ed6fd29e538ae3b11e1808a}\label{classwatchylib_1_1Display_a27d636d11ed6fd29e538ae3b11e1808a}} 
+\index{watchylib.Display@{watchylib.Display}!darkMode@{darkMode}}
+\index{darkMode@{darkMode}!watchylib.Display@{watchylib.Display}}
+\doxysubsubsection{\texorpdfstring{darkMode()}{darkMode()}}
+{\footnotesize\ttfamily  bool watchylib.\+Display.\+dark\+Mode (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Dark mode setting. 
+
+If true, the display colours will be inverted. This setting will not be applied until a refresh is performed. This settings will also affect the border colour. \mbox{\Hypertarget{classwatchylib_1_1Display_a407c4b6c5c9113f99f61ffa419684e8f}\label{classwatchylib_1_1Display_a407c4b6c5c9113f99f61ffa419684e8f}} 
+\index{watchylib.Display@{watchylib.Display}!fastRefresh@{fastRefresh}}
+\index{fastRefresh@{fastRefresh}!watchylib.Display@{watchylib.Display}}
+\doxysubsubsection{\texorpdfstring{fastRefresh()}{fastRefresh()}}
+{\footnotesize\ttfamily  bool watchylib.\+Display.\+fast\+Refresh (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+If this setting is true, the driver will do a fast refresh. 
+
+This will prioritise speed over image quality. It may be useful for animation, if you need redrawing every second. \mbox{\Hypertarget{classwatchylib_1_1Display_adf0c55ee42e8bf2512b00eb88766246a}\label{classwatchylib_1_1Display_adf0c55ee42e8bf2512b00eb88766246a}} 
+\index{watchylib.Display@{watchylib.Display}!fullRefresh@{fullRefresh}}
+\index{fullRefresh@{fullRefresh}!watchylib.Display@{watchylib.Display}}
+\doxysubsubsection{\texorpdfstring{fullRefresh()}{fullRefresh()}}
+{\footnotesize\ttfamily  bool watchylib.\+Display.\+full\+Refresh (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+If this setting it true, all refreshs will be slow refreshes. 
+
+These produce nice sharp images but are fairly slow with lots of flashing. \mbox{\Hypertarget{classwatchylib_1_1Display_a37b93e14131959adbb0fad7d79287b1a}\label{classwatchylib_1_1Display_a37b93e14131959adbb0fad7d79287b1a}} 
+\index{watchylib.Display@{watchylib.Display}!greyMode@{greyMode}}
+\index{greyMode@{greyMode}!watchylib.Display@{watchylib.Display}}
+\doxysubsubsection{\texorpdfstring{greyMode()}{greyMode()}}
+{\footnotesize\ttfamily  bool watchylib.\+Display.\+grey\+Mode (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Grey mode setting. 
+
+If true, the display will produce light grey pixels instead of black. You can layer multiple grey pixels to get a darker shade. It works the opposite way in dark mode i.\+e. dark grey pixels that lighten. This setting will not be applied until a refresh is performed. \mbox{\Hypertarget{classwatchylib_1_1Display_aa79f84d45007889a675c8d75b6771050}\label{classwatchylib_1_1Display_aa79f84d45007889a675c8d75b6771050}} 
+\index{watchylib.Display@{watchylib.Display}!initialRefresh@{initialRefresh}}
+\index{initialRefresh@{initialRefresh}!watchylib.Display@{watchylib.Display}}
+\doxysubsubsection{\texorpdfstring{initialRefresh()}{initialRefresh()}}
+{\footnotesize\ttfamily  bool watchylib.\+Display.\+initial\+Refresh (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+If this setting is true, the next refresh will be a full refresh. 
+
+This setting is automatically cleared after the next refresh. It\textquotesingle{}s useful if you need to do a full refresh before drawing a new scene. \mbox{\Hypertarget{classwatchylib_1_1Display_a41b5195d55310db4bfdf3569ce9f8a0d}\label{classwatchylib_1_1Display_a41b5195d55310db4bfdf3569ce9f8a0d}} 
+\index{watchylib.Display@{watchylib.Display}!invertBorder@{invertBorder}}
+\index{invertBorder@{invertBorder}!watchylib.Display@{watchylib.Display}}
+\doxysubsubsection{\texorpdfstring{invertBorder()}{invertBorder()}}
+{\footnotesize\ttfamily  bool watchylib.\+Display.\+invert\+Border (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Invert border setting. 
+
+If true, the border colour will be inverted. e.\+g. if dark mode is enabled, the border will be white. Otherwise the border colour will match the display mode. This setting will not be applied until a refresh is performed. \mbox{\Hypertarget{classwatchylib_1_1Display_a1a9247d34d8ce9a3123b7b420cbb8bf5}\label{classwatchylib_1_1Display_a1a9247d34d8ce9a3123b7b420cbb8bf5}} 
+\index{watchylib.Display@{watchylib.Display}!line@{line}}
+\index{line@{line}!watchylib.Display@{watchylib.Display}}
+\doxysubsubsection{\texorpdfstring{line()}{line()}}
+{\footnotesize\ttfamily  adafruit\+\_\+display\+\_\+shapes.\+line.\+Line watchylib.\+Display.\+line (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{p1,  }\item[{}]{p2,  }\item[{}]{colour = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+Creates a line object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & The first point of the line as a (x, y) tuple. \\
+\hline
+{\em p2} & The second point of the line as a (x, y) tuple. \\
+\hline
+{\em colour} & The colour of the line (either BLACK or WHITE from this class). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The line object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classwatchylib_1_1Display_a818a81b7c86af1a5eeab9690ce044f57}\label{classwatchylib_1_1Display_a818a81b7c86af1a5eeab9690ce044f57}} 
+\index{watchylib.Display@{watchylib.Display}!opposite@{opposite}}
+\index{opposite@{opposite}!watchylib.Display@{watchylib.Display}}
+\doxysubsubsection{\texorpdfstring{opposite()}{opposite()}}
+{\footnotesize\ttfamily def watchylib.\+Display.\+opposite (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{colour }\end{DoxyParamCaption})}
+
+
+
+Returns to opposite of the given colour. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em colour} & The colour to invert (either BLACK or WHITE from this class). The display is black and white so there are only two colours. This still useful for a lot of internal drawing functions. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classwatchylib_1_1Display_a15e95797452f6c2f08364c7d22b7fa0b}\label{classwatchylib_1_1Display_a15e95797452f6c2f08364c7d22b7fa0b}} 
+\index{watchylib.Display@{watchylib.Display}!polygon@{polygon}}
+\index{polygon@{polygon}!watchylib.Display@{watchylib.Display}}
+\doxysubsubsection{\texorpdfstring{polygon()}{polygon()}}
+{\footnotesize\ttfamily  vectorio.\+Polygon watchylib.\+Display.\+polygon (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{y,  }\item[{}]{points,  }\item[{}]{colour = {\ttfamily None} }\end{DoxyParamCaption})}
+
+
+
+Creates a polygon object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x offset of the polygon. \\
+\hline
+{\em y} & The y offset of the polygon. \\
+\hline
+{\em points} & A list of points that make up the polygon. A list of (x, y) tuples. \\
+\hline
+{\em colour} & The colour of the polygon (either BLACK or WHITE from this class). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The polygon object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classwatchylib_1_1Display_a78cf67221f9d2520a00d6af4a5547813}\label{classwatchylib_1_1Display_a78cf67221f9d2520a00d6af4a5547813}} 
+\index{watchylib.Display@{watchylib.Display}!rectangle@{rectangle}}
+\index{rectangle@{rectangle}!watchylib.Display@{watchylib.Display}}
+\doxysubsubsection{\texorpdfstring{rectangle()}{rectangle()}}
+{\footnotesize\ttfamily def watchylib.\+Display.\+rectangle (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x,  }\item[{}]{y,  }\item[{}]{width,  }\item[{}]{height,  }\item[{}]{colour = {\ttfamily None},  }\item[{}]{no\+Fill = {\ttfamily False},  }\item[{}]{outline\+Thickness = {\ttfamily None},  }\item[{}]{rounding\+Radius = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Creates a rectangle object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The x position of the top left corner of the rectangle. \\
+\hline
+{\em y} & The y position of the top left corner of the rectangle. \\
+\hline
+{\em width} & The width of the rectangle. \\
+\hline
+{\em height} & The height of the rectangle. \\
+\hline
+{\em colour} & The colour of the rectangle (either BLACK or WHITE from this class). \\
+\hline
+{\em outline\+Thickness} & The thickness of the outline of the rectangle, zero for no outline (default). \\
+\hline
+{\em rounding\+Radius} & The radius of the corners of the rectangle, zero for no rounding (default). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The rectangle object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classwatchylib_1_1Display_adb72259a642c16c2de9ce4baa2b659c2}\label{classwatchylib_1_1Display_adb72259a642c16c2de9ce4baa2b659c2}} 
+\index{watchylib.Display@{watchylib.Display}!refresh@{refresh}}
+\index{refresh@{refresh}!watchylib.Display@{watchylib.Display}}
+\doxysubsubsection{\texorpdfstring{refresh()}{refresh()}}
+{\footnotesize\ttfamily def watchylib.\+Display.\+refresh (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Run a display update with whatever settings are currently set. 
+
+This will run a display update with whatever settings are currently set. If the refresh delay has not been met, this function will block until it the display is ready. \mbox{\Hypertarget{classwatchylib_1_1Display_a571df8cbd98fa21e29a228711d541da4}\label{classwatchylib_1_1Display_a571df8cbd98fa21e29a228711d541da4}} 
+\index{watchylib.Display@{watchylib.Display}!setWindow@{setWindow}}
+\index{setWindow@{setWindow}!watchylib.Display@{watchylib.Display}}
+\doxysubsubsection{\texorpdfstring{setWindow()}{setWindow()}}
+{\footnotesize\ttfamily def watchylib.\+Display.\+set\+Window (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{x1,  }\item[{}]{y1,  }\item[{}]{x2,  }\item[{}]{y2 }\end{DoxyParamCaption})}
+
+
+
+Sets the area of the display to update. 
+
+This sets the area of the display that will be updated on the next refresh. It will not be applied until the next refresh. 
+\begin{DoxyParams}{Parameters}
+{\em x1} & The left offset of the start of the update area. \\
+\hline
+{\em y1} & The top offset of the start of the update area. \\
+\hline
+{\em x2} & The left offset of the end of the update area. \\
+\hline
+{\em y2} & The top offset of the end of the update area. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classwatchylib_1_1Display_aadffb41c90725ab3ec1d21ba48568dc0}\label{classwatchylib_1_1Display_aadffb41c90725ab3ec1d21ba48568dc0}} 
+\index{watchylib.Display@{watchylib.Display}!text@{text}}
+\index{text@{text}!watchylib.Display@{watchylib.Display}}
+\doxysubsubsection{\texorpdfstring{text()}{text()}}
+{\footnotesize\ttfamily def watchylib.\+Display.\+text (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{text,  }\item[{}]{x = {\ttfamily None},  }\item[{}]{y = {\ttfamily None},  }\item[{}]{colour = {\ttfamily None},  }\item[{}]{align = {\ttfamily None},  }\item[{}]{bg = {\ttfamily False},  }\item[{}]{font = {\ttfamily None},  }\item[{}]{scale = {\ttfamily 1} }\end{DoxyParamCaption})}
+
+
+
+Creates a text object on the display. 
+
+Create a text object on the display with the Adafruit \mbox{\hyperlink{classwatchylib_1_1Display}{Display}} Text library. The object is returned and added to the display. You can change the returned object\textquotesingle{}s variables such as position or text and it will be automatically updated when the display is refreshed. 
+\begin{DoxyParams}{Parameters}
+{\em text} & The text to display. \\
+\hline
+{\em x} & The x offset of the text, default depends on the alignment. \\
+\hline
+{\em y} & The y offset of the text, default depends on the alignment. \\
+\hline
+{\em colour} & The colour of the text (either BLACK or WHITE from this class). \\
+\hline
+{\em align} & The alignment of the text (either TOP\+\_\+\+LEFT, TOP\+\_\+\+CENTRE, TOP\+\_\+\+RIGHT, CENTRE\+\_\+\+LEFT, CENTRE, CENTRE\+\_\+\+RIGHT, BOTTOM\+\_\+\+LEFT, BOTTOM\+\_\+\+CENTRE, BOTTOM\+\_\+\+RIGHT from this class). \\
+\hline
+{\em bg} & If true, the text will have a background fill of the opposite colour to the text. \\
+\hline
+{\em font} & The font to use for the text, default is the built in font. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A configurable text object. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classwatchylib_1_1Display_afaef166ff8d0d393e43ec994b55be953}\label{classwatchylib_1_1Display_afaef166ff8d0d393e43ec994b55be953}} 
+\index{watchylib.Display@{watchylib.Display}!triangle@{triangle}}
+\index{triangle@{triangle}!watchylib.Display@{watchylib.Display}}
+\doxysubsubsection{\texorpdfstring{triangle()}{triangle()}}
+{\footnotesize\ttfamily def watchylib.\+Display.\+triangle (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{p1,  }\item[{}]{p2,  }\item[{}]{p3,  }\item[{}]{colour = {\ttfamily None},  }\item[{}]{no\+Fill = {\ttfamily False},  }\item[{}]{outline\+Thickness = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Creates a triangle object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p1} & The first point of the triangle as a (x, y) tuple. \\
+\hline
+{\em p2} & The second point of the triangle as a (x, y) tuple. \\
+\hline
+{\em p3} & The third point of the triangle as a (x, y) tuple. \\
+\hline
+{\em colour} & The colour of the triangle (either BLACK or WHITE from this class). colour The colour of the triangle (either BLACK or WHITE from this class). \\
+\hline
+{\em no\+Fill} & If true, the triangle will be an outline only. \\
+\hline
+{\em outline\+Thickness} & The thickness of the outline of the triangle, zero for no outline (default). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The triangle object. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classwatchylib_1_1Display_ac675ac3a6b3a974f0c56bffe8bec15de}\label{classwatchylib_1_1Display_ac675ac3a6b3a974f0c56bffe8bec15de}} 
+\index{watchylib.Display@{watchylib.Display}!FAST\_UPDATE@{FAST\_UPDATE}}
+\index{FAST\_UPDATE@{FAST\_UPDATE}!watchylib.Display@{watchylib.Display}}
+\doxysubsubsection{\texorpdfstring{FAST\_UPDATE}{FAST\_UPDATE}}
+{\footnotesize\ttfamily tuple watchylib.\+Display.\+FAST\+\_\+\+UPDATE\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  (U\_CLOCK\_ON | U\_ANALOG\_ON | U\_LOAD\_TEMP | U\_DISPLAY |\(\backslash\)}
+\DoxyCodeLine{                   U\_DISP\_MODE\_2)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{classwatchylib_1_1Display_a6a13aef16cdf1be2f353adaceac76ed7}\label{classwatchylib_1_1Display_a6a13aef16cdf1be2f353adaceac76ed7}} 
+\index{watchylib.Display@{watchylib.Display}!SLOW\_UPDATE@{SLOW\_UPDATE}}
+\index{SLOW\_UPDATE@{SLOW\_UPDATE}!watchylib.Display@{watchylib.Display}}
+\doxysubsubsection{\texorpdfstring{SLOW\_UPDATE}{SLOW\_UPDATE}}
+{\footnotesize\ttfamily tuple watchylib.\+Display.\+SLOW\+\_\+\+UPDATE\hspace{0.3cm}{\ttfamily [static]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=  (U\_CLOCK\_ON | U\_ANALOG\_ON | U\_LOAD\_TEMP | U\_DISPLAY |\(\backslash\)}
+\DoxyCodeLine{                   U\_DISP\_MODE\_1 | U\_CLOCK\_OFF | U\_ANALOG\_OFF)}
+
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+watchylib.\+py\end{DoxyCompactItemize}

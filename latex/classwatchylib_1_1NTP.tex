@@ -1,0 +1,77 @@
+\hypertarget{classwatchylib_1_1NTP}{}\doxysection{watchylib.\+NTP Class Reference}
+\label{classwatchylib_1_1NTP}\index{watchylib.NTP@{watchylib.NTP}}
+
+
+A class for syncing the \mbox{\hyperlink{classwatchylib_1_1RTC}{RTC}} with an \mbox{\hyperlink{classwatchylib_1_1NTP}{NTP}} server.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+None \mbox{\hyperlink{classwatchylib_1_1NTP_a2da25afe1ab0ba542c76f871eccd3571}{\+\_\+\+\_\+init\+\_\+\+\_\+}} (self, pool, geo, rtc)
+\begin{DoxyCompactList}\small\item\em The constructor for the \mbox{\hyperlink{classwatchylib_1_1NTP}{NTP}} class. \end{DoxyCompactList}\item 
+time.\+struct\+\_\+time \mbox{\hyperlink{classwatchylib_1_1NTP_a66cbbdfa7daa14ebb936b55f9aafdbf0}{time}} (self)
+\begin{DoxyCompactList}\small\item\em Returns the current time from the \mbox{\hyperlink{classwatchylib_1_1NTP}{NTP}} server as a time struct. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classwatchylib_1_1NTP_a6a1f76c38cd3b41d90da940c5b988532}\label{classwatchylib_1_1NTP_a6a1f76c38cd3b41d90da940c5b988532}} 
+None \mbox{\hyperlink{classwatchylib_1_1NTP_a6a1f76c38cd3b41d90da940c5b988532}{sync}} (self)
+\begin{DoxyCompactList}\small\item\em Sets the \mbox{\hyperlink{classwatchylib_1_1RTC}{RTC}} to the current time from an \mbox{\hyperlink{classwatchylib_1_1NTP}{NTP}} server. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1NTP_aa52e4bc98c0c79315475cc06463689b7}\label{classwatchylib_1_1NTP_aa52e4bc98c0c79315475cc06463689b7}} 
+{\bfseries pool}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1NTP_adba39f8ef067b2942c91df2093a623c9}\label{classwatchylib_1_1NTP_adba39f8ef067b2942c91df2093a623c9}} 
+{\bfseries geo}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1NTP_abff88ca6f0b45ce22fd7283fda986657}\label{classwatchylib_1_1NTP_abff88ca6f0b45ce22fd7283fda986657}} 
+{\bfseries rtc}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1NTP_a73c4ad0db4947ea21c3428fcf77e2401}\label{classwatchylib_1_1NTP_a73c4ad0db4947ea21c3428fcf77e2401}} 
+{\bfseries ntp}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for syncing the \mbox{\hyperlink{classwatchylib_1_1RTC}{RTC}} with an \mbox{\hyperlink{classwatchylib_1_1NTP}{NTP}} server. 
+
+This sync should be done every day if possible, depending on the \mbox{\hyperlink{classwatchylib_1_1RTC}{RTC}} accuracy. A DS3231 may only need once a week. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classwatchylib_1_1NTP_a2da25afe1ab0ba542c76f871eccd3571}\label{classwatchylib_1_1NTP_a2da25afe1ab0ba542c76f871eccd3571}} 
+\index{watchylib.NTP@{watchylib.NTP}!\_\_init\_\_@{\_\_init\_\_}}
+\index{\_\_init\_\_@{\_\_init\_\_}!watchylib.NTP@{watchylib.NTP}}
+\doxysubsubsection{\texorpdfstring{\_\_init\_\_()}{\_\_init\_\_()}}
+{\footnotesize\ttfamily  None watchylib.\+NTP.\+\_\+\+\_\+init\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{}]{self,  }\item[{}]{pool,  }\item[{}]{geo,  }\item[{}]{rtc }\end{DoxyParamCaption})}
+
+
+
+The constructor for the \mbox{\hyperlink{classwatchylib_1_1NTP}{NTP}} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pool} & The Socket\+Pool object to use for internet access. \\
+\hline
+{\em geo} & The \mbox{\hyperlink{classwatchylib_1_1GeoLocation}{Geo\+Location}} object to use for time zone and date format. \\
+\hline
+{\em rtc} & The \mbox{\hyperlink{classwatchylib_1_1RTC}{RTC}} object to sync. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classwatchylib_1_1NTP_a66cbbdfa7daa14ebb936b55f9aafdbf0}\label{classwatchylib_1_1NTP_a66cbbdfa7daa14ebb936b55f9aafdbf0}} 
+\index{watchylib.NTP@{watchylib.NTP}!time@{time}}
+\index{time@{time}!watchylib.NTP@{watchylib.NTP}}
+\doxysubsubsection{\texorpdfstring{time()}{time()}}
+{\footnotesize\ttfamily  time.\+struct\+\_\+time watchylib.\+NTP.\+time (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Returns the current time from the \mbox{\hyperlink{classwatchylib_1_1NTP}{NTP}} server as a time struct. 
+
+This time is already formatted for the local time zone. The \mbox{\hyperlink{classwatchylib_1_1NTP}{NTP}} library may cache this value to prevent unnecessary calls. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+watchylib.\+py\end{DoxyCompactItemize}

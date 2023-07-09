@@ -1,0 +1,17 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "upload",
+            "type": "shell",
+            //"command": "cpwebload upload ${workspaceFolder}/main.py",
+            //"command": "python ${workspaceFolder}/../circuitpython_web_uploader/cpwebload.py -d ab74e0 upload ${workspaceFolder}/main.py; python ${workspaceFolder}/../circuitpython_web_uploader/cpwebload.py -d ab74e0 upload ${workspaceFolder}/watchylib.py",
+            "command": "python ${workspaceFolder}/../circuitpython_web_uploader/cpwebload.py upload ${workspaceFolder}/main.py; python ${workspaceFolder}/../circuitpython_web_uploader/cpwebload.py upload ${workspaceFolder}/watchylib.py",
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": []
+        }
+    ]
+}

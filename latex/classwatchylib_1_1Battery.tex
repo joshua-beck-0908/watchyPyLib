@@ -1,0 +1,57 @@
+\hypertarget{classwatchylib_1_1Battery}{}\doxysection{watchylib.\+Battery Class Reference}
+\label{classwatchylib_1_1Battery}\index{watchylib.Battery@{watchylib.Battery}}
+
+
+A class for monitoring the voltage of the single cell Li\+Po battery.  
+
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Battery_a54f4d5931967905673d3e54cdb4ede7c}\label{classwatchylib_1_1Battery_a54f4d5931967905673d3e54cdb4ede7c}} 
+None {\bfseries \+\_\+\+\_\+init\+\_\+\+\_\+} (self, sense\+Pin)
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Battery_afb036b11d154015657935dc13ca81fb1}\label{classwatchylib_1_1Battery_afb036b11d154015657935dc13ca81fb1}} 
+float \mbox{\hyperlink{classwatchylib_1_1Battery_afb036b11d154015657935dc13ca81fb1}{voltage}} (self)
+\begin{DoxyCompactList}\small\item\em Gets the battery voltage. \end{DoxyCompactList}\item 
+float \mbox{\hyperlink{classwatchylib_1_1Battery_a865412fe27d41fa7fe0de25e9dacfacf}{percentage}} (self)
+\begin{DoxyCompactList}\small\item\em Gets the battery percentage. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Battery_a93f4864763a64326415e153beb405da8}\label{classwatchylib_1_1Battery_a93f4864763a64326415e153beb405da8}} 
+{\bfseries sense\+Pin}
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Battery_a4e92c2af359ebd79f88ddc95ab781d85}\label{classwatchylib_1_1Battery_a4e92c2af359ebd79f88ddc95ab781d85}} 
+float {\bfseries VOLTAGE\+\_\+\+DIVIDER} = 0.\+5
+\item 
+\mbox{\Hypertarget{classwatchylib_1_1Battery_a1352a230fe0d9df53120b857ff27b5c9}\label{classwatchylib_1_1Battery_a1352a230fe0d9df53120b857ff27b5c9}} 
+int {\bfseries SAMPLES} = 10
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class for monitoring the voltage of the single cell Li\+Po battery. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classwatchylib_1_1Battery_a865412fe27d41fa7fe0de25e9dacfacf}\label{classwatchylib_1_1Battery_a865412fe27d41fa7fe0de25e9dacfacf}} 
+\index{watchylib.Battery@{watchylib.Battery}!percentage@{percentage}}
+\index{percentage@{percentage}!watchylib.Battery@{watchylib.Battery}}
+\doxysubsubsection{\texorpdfstring{percentage()}{percentage()}}
+{\footnotesize\ttfamily  float watchylib.\+Battery.\+percentage (\begin{DoxyParamCaption}\item[{}]{self }\end{DoxyParamCaption})}
+
+
+
+Gets the battery percentage. 
+
+Uses a formula from \href{https://electronics.stackexchange.com/a/551667}{\texttt{ https\+://electronics.\+stackexchange.\+com/a/551667}} \begin{DoxyReturn}{Returns}
+The battery percentage as a float. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+watchylib.\+py\end{DoxyCompactItemize}
