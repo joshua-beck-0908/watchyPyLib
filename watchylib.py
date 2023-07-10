@@ -225,7 +225,6 @@ class LookupTable:
             self.allData[table]['reversed'] = {v: k for k, v in self.allData[table]['values'].items()}
             
         
-    # TODO: multiword lookup (returns a list)
     def lookup(self, table, key):
         table = table.lower().replace(' ', '')
         if table not in self.allData:
@@ -256,11 +255,15 @@ class LookupTable:
                 print(table)
                 raise RuntimeError(f'Key {key} is not a valid number.')
     
-        if key in table['values']:
-            return table['values'][key]
-        else:
+        try:
+            if table['type'] == 'multiword':
+                return [table['values'][k] for k in key.split(',')]
+            else:
+                return table['values'][key]
+        except KeyError:
             raise RuntimeError(f'Key {key} not found in lookup table {table}.')
         
+    #TODO implement this for multiword tables
     def getkey(self, table, key):
         table = table.lower().strip()
         if table not in self.allData:
@@ -269,6 +272,19 @@ class LookupTable:
             return table['reversed'][key]
         else:
             raise RuntimeError(f'Key {key} not found in lookup table {table}.')
+        
+    def split(self, table, key):
+        if table not in self.allData:
+            raise RuntimeError(f'Lookup table {table} not found.')
+        elif self.allData[table]['type'] != 'multiword':
+            raise RuntimeError(f'Lookup table {table} is not a multiword table.')
+        fields = [k.strip() for k in key.split(',')]
+        for field in fields:
+            if field not in self.allData[table]['values']:
+                raise RuntimeError(f'Key {field} not found in lookup table {table}.')
+        return fields
+
+        
 
 ##
 # @brief ePaper display driver.
@@ -861,6 +877,8 @@ class Display:
 # It's a pretty complicated device and I couldn't find a library for it, so
 # I've written my own.
 class Accelerometer:
+    # https://github.com/boschsensortec/BMA423-Sensor-API
+
     # Maximum i2c burst read/write length.
     _MAX_TRANSFER_LENGTH = 8
     
@@ -960,49 +978,9 @@ class Accelerometer:
 
     _SMALL_CONFIG_LENGTH = 70
     _featureBuffer = bytearray(_SMALL_CONFIG_LENGTH)
+    _callback = {}
 
-    # Possible values for the various settings registers.
-    # Keeping a list and automatically checking them with property setters
-    # makes sure an incorrect value will never be written to the device.
 
-    opts = LookupTable({
-        'data rate': {
-        'unit': 'hz', 
-        'values': {
-          0.78 : 0x01,    1.5 : 0x02,    3.1 : 0x03,     6.25 : 0x04,
-         12.5  : 0x05,   25   : 0x06,   50   : 0x07,   100    : 0x08,
-        200    : 0x09,  400   : 0x0a,  800   : 0x0b,  1600    : 0x0c,
-        }},
-
-        'bandwidth': {
-        'unit': 'sample',
-        'values': {
-         1: 0x00,  2: 0x01,  4: 0x02,   8: 0x03, 
-        16: 0x04, 32: 0x05, 64: 0x06, 128: 0x07,
-        }},
-        
-        'acceleration range': {
-        'unit': 'g',
-        'values': {
-        2: 0x00, 4: 0x01, 8: 0x02, 16: 0x03,
-        }},
-        
-        'cmd': {
-        'type': 'word',
-        'values': {
-        'nvmProg'   : 0xA0, 'fifoFlush':  0xB0, 'softReset' : 0xB6,
-        }},
-        
-        'features': {
-        'type': 'multiword',
-        'values': {
-            'step counter'          : (0x3B, 0x04), 
-            'activity detection'    : (0x3B, 0x08),
-            'tilt detection'        : (0x40, 0x01), 
-            'single tap detection'  : (0x3C, 0x01),
-            'double tap detection'  : (0x3E, 0x01),
-        }},
-    })
 
     def __init__(self, cfg) -> None:
         # The register library requires and I2CDevice object.
@@ -1011,14 +989,11 @@ class Accelerometer:
         i2c = self.cfg['i2c']
         self.i2cBus = i2c
         self.i2c_device = adafruit_bus_device.i2c_device.I2CDevice(i2c, 0x18)               
-        # Interrupt subclasses objects.
-        # Hopefully this is a little simplier than creating twenty different
-        # properties with the same settings layout.
-        intStatus = self.InterruptMask(self.i2c_device, rw=False, address=0x1C, extAddress=0x1D, ffull=0, fwm=1, aux=5, acc=7)
-        int1 = self.InterruptMask(self.i2c_device, rw=True, address=0x56, extAddress=0x58, ctrlAddress=0x53, ffull=0, fwm=1, drdy=2)
-        int2 = self.InterruptMask(self.i2c_device, rw=True, address=0x57, extAddress=0x58, ctrlAddress=0x54, ffull=4, fwm=5, drdy=6)
+        self._setupLookups()
+        self._setupInterrupts()
         print('ACCEL: Init...', end='')
         self.reset()
+        self._setInterrupts(self.int1, 'error', True)
         print('done')
             
     ##
@@ -1067,6 +1042,95 @@ class Accelerometer:
         self.bandwidthParameter = '2 samples'
         self.accelerationRange = '2g'
         self.lowPowerMode = True
+
+    def _setupInterrupts(self):
+        # Interrupt subclasses objects.
+        # Hopefully this is a little simplier than creating twenty different
+        # properties with the same settings layout.
+        self.intStatus = self.InterruptMask(self.i2c_device, rw=False, address=0x1C, extAddress=0x1D, ffull=0, fwm=1, aux=5, acc=7)
+        self.int1 = self.InterruptMask(self.i2c_device, rw=True, address=0x56, extAddress=0x58, ctrlAddress=0x53, ffull=0, fwm=1, drdy=2)
+        self.int2 = self.InterruptMask(self.i2c_device, rw=True, address=0x57, extAddress=0x58, ctrlAddress=0x54, ffull=4, fwm=5, drdy=6)
+        self.int1.inputEn = False
+        self.int1.outputEn = True
+        self.int1.lvl = True
+        self.int1.od = False
+        self.int1.edgeCtrl = False
+        self.int2.inputEn = False
+        self.int2.outputEn = False
+        self.int2.od = True
+        self.int2.lvl = True
+        self.int2.edgeCtrl = False
+
+
+
+    def _setupLookups(self) -> None:
+        # Possible values for the various settings registers.
+        # Keeping a list and automatically checking them with property setters
+        # makes sure an incorrect value will never be written to the device.
+        self.opts = LookupTable({
+            'data rate': {
+            'unit': 'hz', 
+            'values': {
+              0.78 : 0x01,    1.5 : 0x02,    3.1 : 0x03,     6.25 : 0x04,
+             12.5  : 0x05,   25   : 0x06,   50   : 0x07,   100    : 0x08,
+            200    : 0x09,  400   : 0x0a,  800   : 0x0b,  1600    : 0x0c,
+            }},
+
+            'bandwidth': {
+            'unit': 'sample',
+            'values': {
+             1: 0x00,  2: 0x01,  4: 0x02,   8: 0x03, 
+            16: 0x04, 32: 0x05, 64: 0x06, 128: 0x07,
+            }},
+            
+            'acceleration range': {
+            'unit': 'g',
+            'values': {
+            2: 0x00, 4: 0x01, 8: 0x02, 16: 0x03,
+            }},
+            
+            'cmd': {
+            'type': 'word',
+            'values': {
+            'nvmProg'   : 0xA0, 'fifoFlush':  0xB0, 'softReset' : 0xB6,
+            }},
+            
+            'features': {
+            'type': 'multiword',
+            'values': {
+                'step counter'          : (0x3B, 0x04), 
+                'activity detection'    : (0x3B, 0x08),
+                'tilt detection'        : (0x40, 0x01), 
+                'single tap detection'  : (0x3C, 0x01),
+                'double tap detection'  : (0x3E, 0x01),
+            }},
+            
+            'interrupts': {
+            'type': 'multiword',
+            'values': {
+                'error'                : 'errorIntOut',
+                'any motion'           : 'anyNoMotionOut',
+                'no motion'            : 'anyNoMotionOut',
+                'activity'             : 'activityTypeOut',
+                'activity detection'   : 'activityTypeOut',
+                'tap'                  : 'wakeUpOut',
+                'single tab detection' : 'wakeUpOut',
+                'double tab detection' : 'wakeUpOut',
+                'fifo full'            : 'ffullInt',
+                'fifo watermark'       : 'fwmInt',
+                'auxiliary data'       : 'auxInt',
+                'aux data'             : 'auxInt',
+                'acceleration data'    : 'accInt',
+                'accel data'           : 'accInt',
+                'acc data'             : 'accInt',
+                'data ready'           : 'drdyInt',
+                'tilt detection'       : 'wristTiltOut',
+                'wrist tilt'           : 'wristTiltOut',
+                'tilt'                 : 'wristTiltOut',
+                'step counter'         : 'stepCounterOut',
+                'steps'                : 'stepCounterOut',
+            }},
+        })
 
     ##
     # @brief Runs a given command.
@@ -1354,13 +1418,129 @@ class Accelerometer:
             if self._featuresIn != tuple(data):
                 raise RuntimeError('ACCEL: Config update verify failed.')
             
-    def setFeature(self, feature: str) -> None:
+    def _setInterrupts(self, interruptPin, interrupts: str, enable: bool) -> None:
+        for intLine in self.opts.lookup('interrupts', interrupts):
+            bit = getattr(interruptPin, intLine)
+            bit = enable
+
+        
+    def setFeatures(self, features: str, enable: bool) -> None:
+        if enable:
+            self.enableFeatures(features)
+        else:
+            self.disableFeatures(features)
+            
+    def enableFeatures(self, features: str) -> None:
+        # This should return an array of two element tuples
+        # in the form (register, bit)
+        featureMap = self.opts.lookup('features', features)
+        for f in featureMap:
+            self._featureBuffer[f[0]] |= f[1]
+        self._writeConfig(self._featureBuffer)
+        
+    def disableFeatures(self, features: str) -> None:
+        featureMap = self.opts.lookup('features', features)
+        for f in featureMap:
+            self._featureBuffer[f[0]] &= ~f[1]
+        self._writeConfig(self._featureBuffer)
+        
+    def isFeatureEnabled(self, feature: str) -> bool:
+        featureMap = self.opts.lookup('features', feature)
+        for f in featureMap:
+            if self._featureBuffer[f[0]] & f[1]:
+                return True
+        return False
+        
+    @property
+    def activityDetection(self) -> bool:
+        return self.isFeatureEnabled('activityDetection')
+    
+    @activityDetection.setter
+    def activityDetection(self, value: bool) -> None:
+        self.setFeatures('activityDetection', value)
+        
+    @property
+    def singleTapDetection(self) -> bool:
+        return self.isFeatureEnabled('singleTapDetection')
+
+    @singleTapDetection.setter
+    def singleTapDetection(self, value: bool) -> None:
+        self.setFeatures('singleTapDetection', value)
+
+    @property
+    def doubleTapDetection(self) -> bool:
+        return self.isFeatureEnabled('doubleTapDetection')
+
+    @doubleTapDetection.setter
+    def doubleTapDetection(self, value: bool) -> None:
+        self.setFeatures('doubleTapDetection', value) 
+    
+    @property
+    def stepCounter(self) -> bool:
+        return self.isFeatureEnabled('stepCounter')
+
+    @stepCounter.setter
+    def stepCounter(self, value: bool) -> None:
+        self.setFeatures('stepCounter', value)
+
+    @property
+    def tiltDetection(self) -> bool:
+        return self.isFeatureEnabled('tiltDetection')
+    
+    @tiltDetection.setter
+    def tiltDetection(self, value: bool) -> None:
+        self.setFeatures('tiltDetection', value)
+        
+    def _errorHandler(self) -> None:
+        # TODO
         pass
-        #TODO
+        
+    def _int1Callback(self) -> None:
+        # TODO
+        pass
+
+    # TODO
+    def _int2Callback(self) -> None:
+        self._errorHandler()
+    
+    def setCallback(self, features: str, callback) -> None:
+        intLines = self.opts.split('interrupts', features)
+        for intLine in intLines:
+            self._callback[intLine] = callback 
+        if callback is not None:
+            if not self.isFeatureEnabled(features):
+                self.enableFeatures(features)
+        else:
+            if self.isFeatureEnabled(features):
+                self.disableFeatures(features)
+                    
+    
+        
+
+            
 
     ##
     # @brief A subclass for managing interrupt registers.
     class InterruptMask:
+        errorIntOut = None
+        anyNoMotionOut = None
+        wakeupOut = None
+        wristTiltOut = None
+        activityOut = None
+        wakeUpOut = None
+        activityTypeOut = None
+        stepCounterOut = None
+        ffullInt = None
+        fwmInt = None
+        auxInt = None
+        accInt = None
+        drdyInt = None
+        edgeCtrl = None
+        lvl = None
+        od = None
+        outputEn = None
+        inputEn = None
+
         def __init__(self, dev, rw, address, extAddress, ctrlAddress=None, ffull=0, fwm=1, aux=None, acc=None, drdy=None) -> None:
             self.i2c_device = dev
             if rw:
@@ -1405,6 +1585,7 @@ class Accelerometer:
                 self.outputEn = RWBit(register_address=ctrlAddress, bit=3)
                 # Interrupt input enable pin.
                 self.inputEn = RWBit(register_address=ctrlAddress, bit=4)
+                
 
             
 
