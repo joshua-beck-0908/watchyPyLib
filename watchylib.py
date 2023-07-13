@@ -975,10 +975,44 @@ class Accelerometer:
     _auxEn = RWBit(register_address=0x7D, bit=0)
     _accEn = RWBit(register_address=0x7D, bit=2)
     _cmd = RWBits(num_bits=8, register_address=0x7E, lowest_bit=0, register_width=1)
+    ##
+    # A subclass to simplify reading and writing features configs.
+    class FeatureRegister:
+        def __init__(self, address, bitMask=None, lowestBit=0, byteLen=1) -> None:
+            self.address = address
+            if bitMask is None:
+                bitMask = 2 ** (byteLen * 8) - 1
+            self.bitMask = bitMask
+            self.byteLen = byteLen
+            self.lowestBit = lowestBit
+            
+            
+        def __get__(self, obj, objtype=None) -> int:
+            n = 0
+            for i in range(self.byteLen):
+                n += obj._featureBuffer[self.address + i] << (i * 8)
+            n &= self.bitMask << (2 ** self.lowestBit)
+            return n >> (2 ** self.lowestBit)
+        
+        def __set__(self, obj, value) -> None:
+            value &= (self.bitMask << (2 ** self.lowestBit))
+            for i in range(self.byteLen):
+                obj._featureBuffer[self.address + i] = (value >> (i * 8)) & 0xFF
+    
+    _F_CONFIG_ID =          FeatureRegister(0x42, byteLen=2)
+    _F_STEP_CNTR_EN =       FeatureRegister(0x3B, 0x10)
+    _F_STEP_ACT_EN =        FeatureRegister(0x3B, 0x20)
+    _F_WRIST_WEAR_EN =      FeatureRegister(0x40, 0x01)
+    _F_SINGLE_TAP_EN =      FeatureRegister(0x3C, 0x01)
+    _F_DOUBLE_TAP_EN =      FeatureRegister(0x3E, 0x01)
+    _F_ANY_MO_EN =          FeatureRegister(0x00, 0x02)
+    _F_X
+    
 
     _SMALL_CONFIG_LENGTH = 70
     _featureBuffer = bytearray(_SMALL_CONFIG_LENGTH)
     _callback = {}
+    _MOTION_UNITS = 1 / (2**12 - 1)
 
 
 
@@ -1095,42 +1129,49 @@ class Accelerometer:
             'nvmProg'   : 0xA0, 'fifoFlush':  0xB0, 'softReset' : 0xB6,
             }},
             
-            'features': {
-            'type': 'multiword',
-            'values': {
-                'step counter'          : (0x3B, 0x04), 
-                'activity detection'    : (0x3B, 0x08),
-                'tilt detection'        : (0x40, 0x01), 
-                'single tap detection'  : (0x3C, 0x01),
-                'double tap detection'  : (0x3E, 0x01),
-            }},
-            
             'interrupts': {
             'type': 'multiword',
             'values': {
-                'error'                : 'errorIntOut',
-                'any motion'           : 'anyNoMotionOut',
-                'no motion'            : 'anyNoMotionOut',
-                'activity'             : 'activityTypeOut',
-                'activity detection'   : 'activityTypeOut',
-                'tap'                  : 'wakeUpOut',
-                'single tab detection' : 'wakeUpOut',
-                'double tab detection' : 'wakeUpOut',
-                'fifo full'            : 'ffullInt',
-                'fifo watermark'       : 'fwmInt',
-                'auxiliary data'       : 'auxInt',
-                'aux data'             : 'auxInt',
-                'acceleration data'    : 'accInt',
-                'accel data'           : 'accInt',
-                'acc data'             : 'accInt',
-                'data ready'           : 'drdyInt',
-                'tilt detection'       : 'wristTiltOut',
-                'wrist tilt'           : 'wristTiltOut',
-                'tilt'                 : 'wristTiltOut',
-                'step counter'         : 'stepCounterOut',
-                'steps'                : 'stepCounterOut',
+                'error'                : ('errorIntOut',        None),
+                'any motion'           : ('anyNoMotionOut',     None),
+                'no motion'            : ('anyNoMotionOut',     None),
+                'activity'             : ('activityTypeOut',    self._F_STEP_ACT_EN),
+                'activity detection'   : ('activityTypeOut',    self._F_STEP_ACT_EN),
+                'tap'                  : ('wakeUpOut',          self._F_SINGLE_TAP_EN),
+                'single tab detection' : ('wakeUpOut',          self._F_SINGLE_TAP_EN),
+                'double tab'           : ('wakeUpOut',          self._F_DOUBLE_TAP_EN),
+                'double tab detection' : ('wakeUpOut',          self._F_DOUBLE_TAP_EN),
+                'fifo full'            : ('ffullInt',           None),
+                'fifo watermark'       : ('fwmInt',             None),
+                'auxiliary data'       : ('auxInt',             None),
+                'aux data'             : ('auxInt',             None),
+                'acceleration data'    : ('accInt',             None),
+                'accel data'           : ('accInt',             None),
+                'acc data'             : ('accInt',             None),
+                'data ready'           : ('drdyInt',            None),
+                'tilt detection'       : ('wristTiltOut',       self._F_WRIST_WEAR_EN),
+                'wrist tilt'           : ('wristTiltOut',       self._F_WRIST_WEAR_EN),
+                'tilt'                 : ('wristTiltOut',       self._F_WRIST_WEAR_EN),
+                'step counter'         : ('stepCounterOut',     self._F_STEP_CNTR_EN),
+                'steps'                : ('stepCounterOut',     self._F_STEP_CNTR_EN),
+            }},
+            
+            'features': {
+            'type': 'multiword',
+            'values': {
+                'any motion'           : self.FeatureRegister(0x00, 0x01),
+                'no motion'            : self.FeatureRegister(0x04, 0x01),
+                'step counter'         : self.FeatureRegister(0x3B, 0x10),
+                'activity detection'   : self.FeatureRegister(0x3B, 0x20),
+                'single tap detection' : self.FeatureRegister(0x3C, 0x01),
+                'double tap detection' : self.FeatureRegister(0x3E, 0x01),
+                'tilt detection'       : self.FeatureRegister(0x40, 0x01),
+                'axes remap'           : self.FeatureRegister(0x44, 0x01),
+                'step counter target'  : self.FeatureRegister(0x3A, 0x03FF, byteLen=2),
             }},
         })
+        
+    
 
     ##
     # @brief Runs a given command.
@@ -1149,6 +1190,9 @@ class Accelerometer:
             time.sleep(0.001)
             
             
+    @property
+    def configId(self) -> int:
+        return self._F_CONFIG_ID
         
     ##
     # @brief Sets the address in the _featuresIn register.
@@ -1234,7 +1278,13 @@ class Accelerometer:
 
     @property
     def enableStepCounter(self):
-        return self._stepCounterEn
+        return self._F_STEP_CNT_EN
+    
+    @enableStepCounter.setter
+    def enableStepCounter(self, value):
+        self._F_STEP_CNT_EN = value
+        self._writeConfig()
+        
     ##
     # @brief Returns the current acceleration in g's.
     # This property returns a tuple with the current acceleration in g's scaled 
@@ -1391,28 +1441,26 @@ class Accelerometer:
 
     ##
     # @brief Read the configuration data from the device.
-    # @param buffer The buffer to read the configuration data into. This must be a bytearray of length _SMALL_CONFIG_LENGTH .
     # This method reads the configuration data from the accelerometer.
     # Only the simple configuration data is read. The advanced configuration
     # data is only written to via the _loadMainConfig() method.
     # This method is used to cache the configuration data in the driver.
-    def _readConfig(self, buffer: bytearray) -> None:
+    def _readConfig(self) -> None:
         dataLen = self._MAX_TRANSFER_LENGTH
         for offset in range(0, self._SMALL_CONFIG_LENGTH, dataLen):
             self._featureAddress = offset
-            buffer[offset:offset+dataLen] = bytearray(self._featuresIn)
+            self._featureBuffer[offset:offset+dataLen] = bytearray(self._featuresIn)
 
     ##
     # @brief Write the configuration data to the device.
-    # @param buffer The buffer to write the configuration data from.
     # This method writes the configuration data to the accelerometer.
     # It is used to write the simple confirguration data cached in the driver
     # to the accelerometer after it has been modified.
-    def _writeConfig(self, buffer: bytearray) -> None:
+    def _writeConfig(self) -> None:
         dataLen = self._MAX_TRANSFER_LENGTH
         for offset in range(0, self._SMALL_CONFIG_LENGTH, dataLen):
             self._featureAddress = offset
-            data = tuple(buffer[offset:offset + dataLen])
+            data = tuple(self._featureBuffer[offset:offset + dataLen])
             self._featuresIn = data
             # Read back the data to verify it was written correctly.
             if self._featuresIn != tuple(data):
@@ -1424,32 +1472,18 @@ class Accelerometer:
             bit = enable
 
         
-    def setFeatures(self, features: str, enable: bool) -> None:
-        if enable:
-            self.enableFeatures(features)
-        else:
-            self.disableFeatures(features)
-            
-    def enableFeatures(self, features: str) -> None:
-        # This should return an array of two element tuples
-        # in the form (register, bit)
-        featureMap = self.opts.lookup('features', features)
-        for f in featureMap:
-            self._featureBuffer[f[0]] |= f[1]
-        self._writeConfig(self._featureBuffer)
-        
-    def disableFeatures(self, features: str) -> None:
-        featureMap = self.opts.lookup('features', features)
-        for f in featureMap:
-            self._featureBuffer[f[0]] &= ~f[1]
-        self._writeConfig(self._featureBuffer)
-        
+    def _setFeatures(self, features: str, enable: bool) -> None:
+        for f in self.opts.lookup('features', features)
+            f = enable
+        self._writeConfig()
+
     def isFeatureEnabled(self, feature: str) -> bool:
         featureMap = self.opts.lookup('features', feature)
-        for f in featureMap:
-            if self._featureBuffer[f[0]] & f[1]:
-                return True
-        return False
+        # If any of the features are not enabled, return False
+        if False in featureMap:
+            return False
+        else:
+            return True
         
     @property
     def activityDetection(self) -> bool:
@@ -1457,7 +1491,7 @@ class Accelerometer:
     
     @activityDetection.setter
     def activityDetection(self, value: bool) -> None:
-        self.setFeatures('activityDetection', value)
+        self._setFeatures('activityDetection', value)
         
     @property
     def singleTapDetection(self) -> bool:
@@ -1465,7 +1499,7 @@ class Accelerometer:
 
     @singleTapDetection.setter
     def singleTapDetection(self, value: bool) -> None:
-        self.setFeatures('singleTapDetection', value)
+        self._setFeatures('singleTapDetection', value)
 
     @property
     def doubleTapDetection(self) -> bool:
@@ -1473,7 +1507,7 @@ class Accelerometer:
 
     @doubleTapDetection.setter
     def doubleTapDetection(self, value: bool) -> None:
-        self.setFeatures('doubleTapDetection', value) 
+        self._setFeatures('doubleTapDetection', value) 
     
     @property
     def stepCounter(self) -> bool:
@@ -1481,7 +1515,7 @@ class Accelerometer:
 
     @stepCounter.setter
     def stepCounter(self, value: bool) -> None:
-        self.setFeatures('stepCounter', value)
+        self._setFeatures('stepCounter', value)
 
     @property
     def tiltDetection(self) -> bool:
@@ -1489,15 +1523,59 @@ class Accelerometer:
     
     @tiltDetection.setter
     def tiltDetection(self, value: bool) -> None:
-        self.setFeatures('tiltDetection', value)
+        self._setFeatures('tiltDetection', value)
         
     def _errorHandler(self) -> None:
         # TODO
         pass
         
     def _int1Callback(self) -> None:
-        # TODO
+
         pass
+
+    ##
+    # @brief Register a callback for motion detection.
+    # @param callback The function or lambda to call when motion is detected.
+    # @param threshold The threshold for motion detection in g's.
+    # @param duration The minimum duration of motion to trigger the callback.
+    # @param inverted True to trigger the callback when no motion is detected.
+    # @param axis The axis to detect motion on, a string of 'x', 'y', or 'z'.
+    # @return None
+    # Register a callback function when motion exceeds a threshold.
+    # The callback function will be called with a single parameter, the
+    # accelerometer object.
+    # The threshold is in g's and can be any float or integer value less 
+    def motionDetectionCallback(self, callback=None, threshold=0.5, duration=0.5, inverted=False, axes=None):
+        if threshold < 0 or threshold > 1:
+            raise ValueError("ACCEL: Threshold must be between 0 and 1 g's.")
+        if duration < 0 or duration > 163:
+            raise ValueError("ACCEL: Duration must be between 0 and 163 seconds.")
+        if axes:
+            features = [axis + ' motion' for axis in axes if axis in 'xyz']
+            if len(features) == 0:
+                raise ValueError("ACCEL: Invalid axis selection.")
+        if callback is None or not axes or len(features) == 0:
+            self._setInterrupts(self.int1, 'motionDetection', False)
+            self._callback['motionDetection'] = None
+            # todo - make equivalent to 'x motion, y motion, z motion'
+            self._setFeatures('motionDetection', False)
+
+        else:
+            self._setInterrupts(self.int1, 'motionDetection', True)
+            self._callback['motionDetection'] = callback
+            # The motion detection threshold is a 12 bit value with the
+            # maximum being 1 g.  So to convert a measurement in g's to
+            # the threshold we need to divide is by 1g/(max 11 bit value).
+            # This works out to around 0.488 mg per bit.
+            unit = 1/(2**11-1)
+            motionConfig = round(threshold / unit)
+            motionConfig |= (2 ** 11) if not inverted else 0
+            self._featureBuffer[self._OFFS_MOTION_CONFIG] = motionConfig
+            self._featureBuffer[self._OFFS_MOTION_CONFIG_2] = motionConfig
+            motionConfig2 = round(duration * 1000 / 20)
+            
+            features = ','.join(features)
+            self._setFeatures(features=features, enable=True)
 
     # TODO
     def _int2Callback(self) -> None:
@@ -1586,6 +1664,10 @@ class Accelerometer:
                 # Interrupt input enable pin.
                 self.inputEn = RWBit(register_address=ctrlAddress, bit=4)
                 
+
+            
+
+             
 
             
 
